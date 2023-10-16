@@ -1,0 +1,197 @@
+title: Section
+fields:
+  -
+    handle: slug
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Slug
+      icon: text
+      instructions: 'Use this field to apply a unique ID to this section to be used with jump links'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      width: 50
+  -
+    handle: background_colour
+    field: common.colour
+    config:
+      display: 'Background Colour'
+      width: 25
+      default: white
+  -
+    handle: text_colour
+    field: common.colour
+    config:
+      display: 'Text Colour'
+      width: 25
+      default: black
+  -
+    handle: top_border
+    field:
+      default: false
+      type: toggle
+      display: 'Top Border'
+      icon: toggle
+      width: 33
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: remove_columns_gap
+    field:
+      default: false
+      type: toggle
+      display: 'Remove columns gap'
+      icon: toggle
+      width: 33
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: screen_minimum_height
+    field:
+      default: false
+      type: toggle
+      display: 'Screen minimum height'
+      icon: toggle
+      width: 33
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: columns
+    field:
+      collapse: false
+      previews: true
+      fullscreen: true
+      sets:
+        new_set_group:
+          display: 'New Section'
+          instructions: null
+          icon: null
+          sets:
+            new_column:
+              display: 'New Column'
+              instructions: null
+              icon: null
+              fields:
+                -
+                  handle: size
+                  field:
+                    min: 0
+                    max: 12
+                    step: 1
+                    type: range
+                    display: Size
+                    icon: range
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                    width: 50
+                -
+                  handle: set_horizontal_position
+                  field:
+                    default: false
+                    type: toggle
+                    display: 'Set Horizontal Position'
+                    icon: toggle
+                    width: 25
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                    instructions: 'Activate this option if you want to move the column a few positions to the right.'
+                -
+                  handle: set_span_rows
+                  field:
+                    default: false
+                    type: toggle
+                    display: 'Set span rows'
+                    icon: toggle
+                    instructions: 'Activate this item if you want the column to span more than one row'
+                    width: 25
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                -
+                  handle: vertical_alignment
+                  field: common.vertical_alignment
+                  config:
+                    width: 33
+                -
+                  handle: horizontal_position
+                  field:
+                    min: 0
+                    max: 12
+                    step: 1
+                    type: range
+                    display: 'Horizontal Position'
+                    icon: range
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                    if:
+                      set_horizontal_position: 'equals true'
+                    instructions: 'The column will be shifted to the right n positions.'
+                -
+                  handle: span_rows
+                  field:
+                    min: 0
+                    max: 6
+                    step: 1
+                    default: 0
+                    type: range
+                    display: 'Span rows'
+                    icon: range
+                    instructions: 'Use this utility to make the column span n rows.'
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                    if:
+                      set_span_rows: 'equals true'
+                -
+                  import: article
+                  prefix: column_
+                -
+                  handle: top_padding
+                  field: common.top_padding
+                -
+                  handle: right_padding
+                  field: common.right_padding
+                -
+                  handle: bottom_padding
+                  field: common.bottom_padding
+                -
+                  handle: left_padding
+                  field: common.left_padding
+      type: replicator
+      display: Columns
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: top_padding
+    field: common.top_padding
+  -
+    handle: right_padding
+    field: common.right_padding
+  -
+    handle: bottom_padding
+    field: common.bottom_padding
+  -
+    handle: left_padding
+    field: common.left_padding

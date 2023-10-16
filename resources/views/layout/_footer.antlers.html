@@ -1,0 +1,16 @@
+{{#
+    @name Footer
+    @desc The sites footer rendered on each page.
+#}}
+
+<!-- /layout/_footer.antlers.html -->
+
+{{# footer | dump #}}
+<footer class="w-full py-0 mt-auto">
+    {{ if footer}}
+        {{ footer}}
+            {{ partial:page_builder/section }}
+        {{/footer}}
+    {{ /if }}
+</footer>
+<!-- End: /layout/_footer.antlers.html -->

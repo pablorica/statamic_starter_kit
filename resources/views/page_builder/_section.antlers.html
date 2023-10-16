@@ -1,0 +1,123 @@
+{{#
+	@name Section
+	@desc A column repeater block to be included in the page builder
+    @set page.page_builder.section    
+#}}
+
+<!-- /page_builder/_section.antlers.html -->
+
+{{ section_class =  'fluid-container pt-8 pb-8 grid gap-4 md:grid-cols-12' }}
+
+
+{{ if screen_minimum_height }}
+    {{ section_class .=  ' md:min-h-screen' }}
+{{ /if }}
+
+{{ if remove_columns_gap}}
+    {{ section_class .=  ' md:gap-0' }}
+{{ /if }}
+
+
+{{ if top_padding != -1 }}
+    {{ section_class .=  ' md:pt-' + (top_padding*4) }}
+{{ /if }}
+
+
+{{ if bottom_padding != -1 }}
+    {{ section_class .= ' md:pb-' + (bottom_padding*4) }}
+{{ /if }}
+
+
+{{ if left_padding != -1 }}
+    {{ section_class .=  ' md:pl-' + (left_padding*4) }}
+{{ /if }}
+
+
+{{ if right_padding != -1 }}
+    {{ section_class .= ' md:pr-' + (right_padding*4) }}
+{{ /if }}
+
+
+{{ if top_border }}
+    {{ section_class .=  ' border-black border-t' }}
+{{ /if }}
+
+{{# Mentioning the exact class names in comments, its styles will be compiled. #}}
+{{# text-black text-white text-lightblue text-blue text-darkblue text-pink text-yellow text-orange text-green text-grey #}}
+{{ if text_colour }}
+    {{ section_class .=  ' text-' + text_colour }}
+{{ /if }}
+
+
+{{# bg-black bg-white bg-lightblue bg-blue bg-darkblue bg-pink bg-yellow bg-orange bg-green bg-grey #}}
+{{ if background_colour }}
+    {{ section_class .=  ' bg-' + background_colour }}
+{{ /if }}
+
+{{# dump #}}
+
+
+
+
+<section id="{{ slug }}" 
+    x-data="{ shown_{{ id }}: false }" 
+    x-intersect.once="shown_{{ id }} = true;"
+    class="{{section_class}} opacity-0"
+    :class="shown_{{ id }} ? 'animate-appearsin' : ''" 
+>
+    {{ columns }}
+
+        {{ column_class =  '' }}
+        {{# column_class .=  ' border border-black'  #}}
+        
+        {{ if size }}
+            {{ column_class .=  ' md:col-span-' + size }}
+        {{ /if }}
+
+        {{ if set_horizontal_position && horizontal_position > 0 }}
+            {{ column_class .=  ' md:col-start-' + horizontal_position }}
+        {{ /if }}
+
+        {{ if set_span_rows && span_rows > 0 }}
+            {{ column_class .=  ' md:row-span-' + span_rows }}
+        {{ /if }}
+
+
+        {{ if vertical_alignment == 'middle' }}
+            {{ column_class .=  ' grid items-center' }}
+        {{ /if }}
+        {{ if vertical_alignment == 'bottom' }}
+            {{ column_class .= ' grid items-end' }}
+        {{ /if }}
+
+        {{ if top_padding != -1 }}
+            {{ column_class .=  ' md:pt-' + (top_padding*4) }}
+        {{ /if }}
+
+        {{ if right_padding != -1 }}
+            {{ column_class .=  ' md:pr-' + (right_padding*4) }}
+        {{ /if }}
+
+        {{ if bottom_padding != -1 }}
+            {{ column_class .=  ' md:pb-' + (bottom_padding*4) }}
+        {{ /if }}
+
+        {{ if left_padding != -1 }}
+            {{ column_class .=  ' md:pl-' + (left_padding*4) }}
+        {{ /if }}
+
+        
+            {{ partial:typography/article
+                as="div" 
+                :class="column_class" 
+                
+            }}
+                {{ column_article }}
+                    {{ partial src="components/{type}" }}
+                {{ /column_article }}
+            {{ /partial:typography/article }}
+
+    {{ /columns }}
+</section>
+
+<!-- End: /page_builder/_section.antlers.html -->
