@@ -120,7 +120,7 @@ public/1n7h0.php
 /public/storage
 /public/vendor/statamic
 /public/img/
-/public/images/
+/public/images/*.*
 /public/static/
 /public/build/
 
@@ -170,6 +170,8 @@ resources/views/vendor/livewire/
 !site.webmanifest
 
 
+# track peak image, if it exists
+!public/images/a-peak.jpg
 
 
 
