@@ -95,6 +95,8 @@ fields:
                     visibility: visible
                     hide_display: false
                     width: 50
+                    replicator_preview: true
+                    default: 6
                 -
                   handle: set_horizontal_position
                   field:
@@ -183,6 +185,7 @@ fields:
       instructions_position: above
       visibility: visible
       hide_display: false
+      replicator_preview: true
   -
     handle: top_padding
     field: common.top_padding

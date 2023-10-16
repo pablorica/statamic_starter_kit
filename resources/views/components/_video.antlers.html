@@ -1,30 +1,62 @@
 {{#
     @name Video
-    @desc The video component. A sizeable YouTube or Vimeo video rendered in a responsive container with an optional caption.
+    @desc The video component. A sizeable YouTube or Vimeo video rendered in a responsive container with an optional caption. We are using the custom modifiers is_vimeo and is_youtube to check if the video_url is a Vimeo or YouTube url.
+    @see https://statamic.dev/modifiers/
+    @param wrapper_class    string
+    @param video_url        url of the video
+    @param video_loop       boolean
+    @param video_autoplay   boolean
+    @param ratio_width      integer
+    @param ratio_height     integer
     @set page.article.video
 #}}
 
 <!-- /components/_video.antlers.html -->
+
+{{# We are using a new variable to save the original video_url value because this code is iterating over references to video_url (it's changing its value globally). #}}
+{{ current_video_url = video_url }} 
+
 {{ cookie_embeds =
     (environment == 'local' && seo:trackers_local && seo:embeds) or
     (environment == 'staging' && seo:trackers_staging && seo:embeds) or
     (environment == 'production' && seo:trackers_production && seo:embeds)
 }}
+
+{{ url_union = '?' }}
+{{ if current_video_url | contains('?') }}
+    {{ url_union = '&' }}
+{{ /if }}
+
+
+{{ if current_video_url | is_vimeo }}
+    {{ current_video_url .= '{url_union}loop={video_loop}'}}
+    {{ if video_autoplay }}
+        {{ current_video_url .= '&autoplay={video_autoplay}&muted=1&autopause=0&hidecontrols=1&background=1'}}
+    {{ /if }}
+{{ /if }}
+    
+{{ if current_video_url | is_youtube:id }}
+    {{ url_union = '?' }}
+    {{ if video_loop}}
+        {{ current_video_url .= '?loop={video_loop}&playlist={current_video_url | is_youtube:id}' }}
+        {{ url_union = '&' }}
+    {{ /if }}
+    {{ if video_autoplay }}
+        {{ current_video_url .= '{url_union}autoplay={video_autoplay}&mute=1&controls=0' }}
+    {{ /if }}
+{{ /if }}
+
 <div
     {{ if cookie_embeds }}
         x-data
     {{ /if }}
-    class="
-        not-prose
-        {{ switch(
-            (size == 'md') => 'size-md',
-            (size == 'lg') => 'size-lg',
-            (size == 'xl') => 'size-xl',
-            () => 'size-md'
-        )}}
-    "
+    class="{{ wrapper_class }}"
 >
-    <div class="relative aspect-video">
+    <div class="relative aspect-video"
+    {{ if ratio_width && ratio_height }}
+        {{ 'style="aspect-ratio:'+ratio_width+' / '+ratio_height+'"' }}
+    {{ /if }}
+    >
         {{ if cookie_embeds }}
             <div
                 x-show="!$store.cookieBanner.consent || !$store.cookieBanner.embeds"
@@ -35,13 +67,29 @@
                 </a>
             </div>
             <template x-if="$store.cookieBanner.consent && $store.cookieBanner.embeds">
-                <iframe class="absolute top-0 left-0 w-full h-full" width="100%" src="{{ video_url | embed_url }}" height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="{{ current_video_url | embed_url }}"
+                    class="absolute top-0 left-0 w-full h-full" 
+                    width="100%"  
+                    height="auto" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                ></iframe>
             </template>
         {{ else }}
-            <iframe class="absolute top-0 left-0 w-full h-full" width="100%" src="{{ video_url | embed_url }}" height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="{{ current_video_url | embed_url }}"
+                class="absolute top-0 left-0 w-full h-full" 
+                width="100%"  
+                height="auto" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
         {{ /if }}
     </div>
 
     {{ partial:typography/caption }}
+
 </div>
+
 <!-- End: /components/_video.antlers.html -->

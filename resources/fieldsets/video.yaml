@@ -9,15 +9,59 @@ fields:
       localizable: true
       width: 50
       listable: hidden
-      display: 'Video'
-      instructions: "YouTube or Vimeo URL."
+      display: Video
+      instructions: 'YouTube or Vimeo URL.'
       instructions_position: below
   -
-    handle: size
-    field: common.size
-    config:
-      localizable: true
+    handle: ratio_width
+    field:
+      default: '16'
+      type: integer
+      display: 'Ratio: Width'
+      icon: integer
+      width: 25
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: ratio_height
+    field:
+      default: '9'
+      type: integer
+      display: 'Ratio: Height'
+      icon: integer
+      width: 25
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: video_autoplay
+    field:
+      default: false
+      type: toggle
+      display: Autoplay
+      icon: toggle
       width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: video_loop
+    field:
+      default: false
+      type: toggle
+      display: Loop
+      icon: toggle
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
   -
     handle: caption
     field:

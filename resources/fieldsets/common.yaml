@@ -130,9 +130,10 @@ fields:
     handle: orientation
     field:
       options:
+        default: Default
         portrait: Portrait
         landscape: Landscape
-      default: landscape
+      default: default
       type: button_group
       display: Orientation
       icon: button_group
