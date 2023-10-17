@@ -37,6 +37,7 @@ fields:
             index_content:
               display: 'Index content'
               instructions: 'Render the currently mounted entries if available.'
+              icon: null
               fields:
                 -
                   import: index_content
@@ -50,12 +51,14 @@ fields:
             news:
               display: News
               instructions: 'List the most recent News.'
+              icon: null
               fields:
                 -
                   import: news
             projects:
               display: Projects
               instructions: 'List the most recent Projects.'
+              icon: null
               fields:
                 -
                   import: projects
@@ -75,3 +78,4 @@ fields:
       visibility: visible
       previews: true
       fullscreen: true
+      replicator_preview: true

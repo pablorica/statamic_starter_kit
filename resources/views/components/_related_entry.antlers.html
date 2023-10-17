@@ -9,8 +9,6 @@
 {{ entrycard_title = '' }}
 {{ entrycard_image = ''  }}
 {{ entrycard_url = ''  }}
-{{ entrycard_taxonomy =  '' }}
-{{ entrycard_bg_color =  '' }}
 
 {{ if entrycard_id }}
     {{ entryid = entrycard_id }}
@@ -24,48 +22,16 @@
     {{entrycard_image = image }}
     {{entrycard_url = url }}
 
-    {{ if collection.handle == 'projects' 
-        || collection.handle == 'journal' 
-        && sectors 
-    }}
-        {{ sectors }}  
-            {{ entrycard_taxonomy =  title }}
-            {{ entrycard_bg_color =  colour }}
-
-            {{ if background_colour }}
-                {{ entrycard_bg_color =  background_colour }}
-            {{ endif }}
-
-        {{ /sectors }}
-    {{ endif }}
-
-    {{ if collection.handle == 'news' 
-        && category 
-    }}
-        {{ category }}  
-            {{ entrycard_taxonomy =  title }}
-            {{ entrycard_bg_color =  colour }}
-        {{ /category }}
-    {{ endif }}  
-
-    
-
-    
-
 
 {{ /get_content }}
 
 
 
 {{ if entrycard_title != '' 
-    && entrycard_taxonomy != '' 
     && entrycard_image  != '' 
 }}
 
     {{ entrycard_class = "hover:bg-white"   }}
-    {{ if entrycard_bg_color }}
-        {{ entrycard_class = "hover:bg-" + entrycard_bg_color  }}
-    {{ endif }}
 
     <a href="{{entrycard_url}}">
     <div  class=" my-0 grid gap-0 md:grid-cols-12 transition-all {{ entrycard_class }} " 
@@ -94,19 +60,6 @@
                     class="aspect-16/9"
                 }}
             </figure>
-        </div>
-
-        <div class="
-            max-w-none
-            md:ml-16
-            md:mb-8
-            flex items-end
-        ">
-            {{ partial:components/vertical_title 
-                vertical_alignment="bottom" 
-                :title="entrycard_taxonomy | upper" 
-                class="" 
-            }}
         </div>
     </div>
     </a>

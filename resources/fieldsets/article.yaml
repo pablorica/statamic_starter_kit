@@ -17,6 +17,10 @@ fields:
         - quote
         - removeformat
         - anchor
+        - alignleft
+        - aligncenter
+        - alignright
+        - alignjustify
       save_html: false
       toolbar_mode: fixed
       link_noopener: false

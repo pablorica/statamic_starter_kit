@@ -78,7 +78,7 @@
         <div id="location"
             class="
             max-w-none
-            md:col-span-4 grid items-end
+            md:col-span-3 grid items-end
         ">
             {{ partial:typography/h3 
                 content="LOCATION" 
@@ -92,7 +92,7 @@
         <div id="sector"
             class="
             max-w-none
-            md:col-span-4 grid items-end
+            md:col-span-3 grid items-end
         ">
             {{ partial:typography/h3 
                 content="SECTOR" 
@@ -103,10 +103,24 @@
             }}
         </div>
 
+        <div id="client"
+            class="
+            max-w-none
+            md:col-span-3 grid items-end
+        ">
+            {{ partial:typography/h3 
+                content="CLIENT" 
+            }}
+            {{ partial:typography/p 
+                :content="client" 
+                class="block h5 mt-1" 
+            }}
+        </div>
+
         <div id="date"
             class="
             max-w-none
-            md:col-span-4 grid items-end
+            md:col-span-3 grid items-end
         ">
             {{ partial:typography/h3 
                 content="DATE" 
