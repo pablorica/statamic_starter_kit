@@ -1,0 +1,115 @@
+{{#
+    @name Related Entry
+    @desc Card with a link to a collection entry
+    @set page.article.related_entry
+#}}
+
+<!-- /components/_related_entry.antlers.html -->
+
+{{ entrycard_title = '' }}
+{{ entrycard_image = ''  }}
+{{ entrycard_url = ''  }}
+{{ entrycard_taxonomy =  '' }}
+{{ entrycard_bg_color =  '' }}
+
+{{ if entrycard_id }}
+    {{ entryid = entrycard_id }}
+{{ else}}
+    {{ entryid = entry.id }}
+{{ endif }}
+
+{{ get_content from="{{entryid}}" }}
+
+    {{entrycard_title = title }}
+    {{entrycard_image = image }}
+    {{entrycard_url = url }}
+
+    {{ if collection.handle == 'projects' 
+        || collection.handle == 'journal' 
+        && sectors 
+    }}
+        {{ sectors }}  
+            {{ entrycard_taxonomy =  title }}
+            {{ entrycard_bg_color =  colour }}
+
+            {{ if background_colour }}
+                {{ entrycard_bg_color =  background_colour }}
+            {{ endif }}
+
+        {{ /sectors }}
+    {{ endif }}
+
+    {{ if collection.handle == 'news' 
+        && category 
+    }}
+        {{ category }}  
+            {{ entrycard_taxonomy =  title }}
+            {{ entrycard_bg_color =  colour }}
+        {{ /category }}
+    {{ endif }}  
+
+    
+
+    
+
+
+{{ /get_content }}
+
+
+
+{{ if entrycard_title != '' 
+    && entrycard_taxonomy != '' 
+    && entrycard_image  != '' 
+}}
+
+    {{ entrycard_class = "hover:bg-white"   }}
+    {{ if entrycard_bg_color }}
+        {{ entrycard_class = "hover:bg-" + entrycard_bg_color  }}
+    {{ endif }}
+
+    <a href="{{entrycard_url}}">
+    <div  class=" my-0 grid gap-0 md:grid-cols-12 transition-all {{ entrycard_class }} " 
+        >
+        <div class="
+            max-w-none
+            md:col-span-6 md:pt-4 md:pr-4 md:pb-4 md:pl-16
+        ">
+            {{ partial:typography/h3 
+                :content="entrycard_title" 
+                class="md:text-5xl md:leading-5xl"
+            }}
+        </div>
+
+        <div class="
+            max-w-none
+            md:col-span-6 md:row-span-2 md:pt-0 md:pr-0 md:pb-0 md:pl-0
+        ">
+            <figure class="not-prose size-md ">
+                {{ partial:statamic-peak-tools::components/picture 
+                    :image="entrycard_image" 
+                    sizes=" 90vw, (min-width: 768px) 50vw" 
+                    aspect_ratio="16/9" 
+                    lazy="true" 
+                    cover="true"
+                    class="aspect-16/9"
+                }}
+            </figure>
+        </div>
+
+        <div class="
+            max-w-none
+            md:ml-16
+            md:mb-8
+            flex items-end
+        ">
+            {{ partial:components/vertical_title 
+                vertical_alignment="bottom" 
+                :title="entrycard_taxonomy | upper" 
+                class="" 
+            }}
+        </div>
+    </div>
+    </a>
+
+{{ endif }}
+<!-- End: /components/_related_entry.antlers.html -->

@@ -45,6 +45,31 @@ fields:
               fields:
                 -
                   import: buttons
+            form:
+              display: Form
+              instructions: null
+              icon: form-text-field
+              fields:
+                -
+                  handle: form
+                  field: form.form
+                  config:
+                    validate:
+                      - required
+            carousel:
+              display: Carousel
+              instructions: null
+              icon: layout-carousel-horizontal
+              fields:
+                -
+                  import: carousel
+            related_entry:
+              display: 'Related Entry'
+              instructions: null
+              icon: media-news-paper
+              fields:
+                -
+                  import: related_entry
         text:
           display: Text
           instructions: 'Text based sets.'

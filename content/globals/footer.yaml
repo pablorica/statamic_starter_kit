@@ -9,19 +9,20 @@ data:
   columns:
     -
       id: llhoo31h
-      size: 12
+      size: 3
       set_horizontal_position: false
       set_span_rows: false
       vertical_alignment: top
       column_article:
         -
-          type: heading
+          type: set
           attrs:
-            level: 1
-          content:
-            -
-              type: text
-              text: HUGH
+            id: lnu2c2fh
+            values:
+              type: image
+              image: logo.svg
+              size: md
+              orientation: default
       top_padding: -1
       right_padding: -1
       bottom_padding: -1
@@ -31,88 +32,24 @@ data:
       horizontal_position: 0
       span_rows: 0
     -
-      id: llhopaid
-      size: 9
-      set_horizontal_position: true
-      set_span_rows: false
-      vertical_alignment: top
-      horizontal_position: 2
-      column_article:
-        -
-          type: heading
-          attrs:
-            level: 1
-          content:
-            -
-              type: text
-              text: BROUGHTON
-      top_padding: -1
-      right_padding: -1
-      bottom_padding: -1
-      left_padding: -1
-      type: new_column
-      enabled: true
-      span_rows: 0
-    -
-      id: llhopxvk
-      size: 9
-      set_horizontal_position: true
-      set_span_rows: false
-      vertical_alignment: top
-      horizontal_position: 2
-      column_article:
-        -
-          type: heading
-          attrs:
-            level: 1
-          content:
-            -
-              type: text
-              text: ARCHITECTS
-      top_padding: -1
-      right_padding: -1
-      bottom_padding: 8
-      left_padding: -1
-      type: new_column
-      enabled: true
-      span_rows: 0
-    -
       id: llhoqinz
       size: 3
       set_horizontal_position: true
       set_span_rows: false
       vertical_alignment: top
-      horizontal_position: 2
+      horizontal_position: 1
       column_article:
         -
           type: paragraph
           content:
             -
               type: text
-              marks:
-                -
-                  type: link
-                  attrs:
-                    href: 'mailto:info@hbarchitects.co.uk'
-                    rel: null
-                    target: null
-                    title: null
-              text: info@hbarchitects.co.uk
+              text: pablo@codigo.co.uk
             -
               type: hardBreak
             -
               type: text
-              text: '+44 (0)20 8735 9959'
-            -
-              type: hardBreak
-            -
-              type: text
-              text: '41 Beavor Lane'
-            -
-              type: hardBreak
-            -
-              type: text
-              text: 'London W6 9BL'
+              text: '+44 (0)7722 873 455'
       top_padding: -1
       right_padding: -1
       bottom_padding: -1
@@ -132,22 +69,28 @@ data:
           content:
             -
               type: text
-              text: Instagram
-            -
-              type: hardBreak
-            -
-              type: text
+              marks:
+                -
+                  type: link
+                  attrs:
+                    href: 'https://www.linkedin.com/in/pablo-rica-6052b538/'
+                    rel: null
+                    target: _blank
+                    title: null
               text: LinkedIn
             -
               type: hardBreak
             -
               type: text
+              marks:
+                -
+                  type: link
+                  attrs:
+                    href: 'https://twitter.com/Pablo_Rica'
+                    rel: null
+                    target: _blank
+                    title: null
               text: Twitter
-            -
-              type: hardBreak
-            -
-              type: text
-              text: 'Design by TM'
       top_padding: -1
       right_padding: -1
       bottom_padding: -1

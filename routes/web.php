@@ -16,3 +16,21 @@ use Illuminate\Support\Facades\Route;
 // Route::statamic('example', 'example-view', [
 //    'title' => 'Example'
 // ]);
+
+// The route to the RSS News feed.
+Route::statamic('/feed/news', 
+    'feed/news', 
+    [
+        'layout' => null,
+        'content_type' => 'application/xml',
+    ]
+);
+
+// The route to the RSS Projects feed.
+Route::statamic('/feed/projects', 
+    'feed/projects', 
+    [
+        'layout' => null,
+        'content_type' => 'application/xml',
+    ]
+);

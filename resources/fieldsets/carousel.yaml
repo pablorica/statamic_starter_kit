@@ -1,0 +1,58 @@
+title: Carousel
+fields:
+  -
+    handle: carousel
+    field:
+      collapse: false
+      previews: true
+      fullscreen: true
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          instructions: null
+          icon: null
+          sets:
+            slide:
+              display: 'New slide'
+              instructions: null
+              icon: null
+              fields:
+                -
+                  handle: image
+                  field: common.image
+                -
+                  handle: caption
+                  field: common.text_plain
+                  config:
+                    display: Caption
+      type: replicator
+      display: Carousel
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: navigation_arrows
+    field:
+      default: false
+      type: toggle
+      display: 'Navigation arrows'
+      icon: toggle
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: indicator_buttons
+    field:
+      default: false
+      type: toggle
+      display: 'Indicator Buttons'
+      icon: toggle
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false

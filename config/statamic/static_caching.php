@@ -57,6 +57,7 @@ return [
         '/site.webmanifest',
         '/sitemap.xml',
         '/sitemaps.xml',
+        '/feed*', // Exclude all feeds
         // Add sitemaps for multisites here
     ],
 

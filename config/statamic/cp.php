@@ -52,6 +52,16 @@ return [
             'width' => 50,
         ],
         [
+            'type' => 'collection',
+            'collection' => 'news',
+            'width' => 50
+        ],
+        [
+            'type' => 'collection',
+            'collection' => 'projects',
+            'width' => 50
+        ],
+        [
             'type' => 'form',
             'form' => 'contact',
             'fields' => ['name', 'email'],
