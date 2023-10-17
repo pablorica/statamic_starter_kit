@@ -13,22 +13,71 @@ fields:
       instructions_position: above
       visibility: visible
       hide_display: false
-      width: 50
-      replicator_preview: true
+      width: 33
+  -
+    handle: bg_image
+    field: common.image
+    config:
+      display: 'Background Image'
+      width: 66
+  -
+    handle: section_link
+    field:
+      type: link
+      display: 'Section link'
+      icon: link
+      instructions: 'If this section is linked to an internal or external element, select the URL here.'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: navigation_colour
+    field:
+      options:
+        white: null
+        grey: null
+      taggable: false
+      push_tags: false
+      multiple: false
+      clearable: false
+      searchable: true
+      cast_booleans: false
+      type: select
+      display: 'Navigation colour'
+      icon: select
+      instructions: 'The colour of the navigation buttons will change according to the background of the section when they are over it. However, you can force this colour by selecting it here.'
+      width: 33
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
   -
     handle: background_colour
     field: common.colour
     config:
       display: 'Background Colour'
-      width: 25
+      width: 33
       default: white
   -
     handle: text_colour
     field: common.colour
     config:
       display: 'Text Colour'
-      width: 25
+      width: 33
       default: black
+  -
+    handle: loading_effect
+    field:
+      default: true
+      type: toggle
+      display: 'Loading effect'
+      icon: toggle
+      width: 33
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
   -
     handle: top_border
     field:
@@ -96,8 +145,6 @@ fields:
                     visibility: visible
                     hide_display: false
                     width: 50
-                    replicator_preview: true
-                    default: 6
                 -
                   handle: set_horizontal_position
                   field:
@@ -186,7 +233,6 @@ fields:
       instructions_position: above
       visibility: visible
       hide_display: false
-      replicator_preview: true
   -
     handle: top_padding
     field: common.top_padding

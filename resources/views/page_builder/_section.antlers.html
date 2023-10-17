@@ -6,7 +6,22 @@
 
 <!-- /page_builder/_section.antlers.html -->
 
-{{ section_class =  'fluid-container pt-8 pb-8 grid gap-4 md:grid-cols-12' }}
+{{ icon_background =  'white-icon' }}
+
+{{ section_style =  '' }}
+{{ section_class =  'fluid-container grid gap-4 md:grid-cols-12 ' }}
+
+{{ if is_entry 
+    && (
+        collection == 'news' 
+        || collection == 'projects'
+        || collection == 'journal'
+    )
+}}
+    {{ section_class .=  ' pt-15 pb-15' }}
+{{ else }}
+    {{ section_class .=  ' pt-8 pb-8' }}
+{{ /if }}
 
 
 {{ if screen_minimum_height }}
@@ -52,18 +67,56 @@
 {{# bg-black bg-white bg-lightblue bg-blue bg-darkblue bg-pink bg-yellow bg-orange bg-green bg-grey #}}
 {{ if background_colour }}
     {{ section_class .=  ' bg-' + background_colour }}
+    {{ if background_colour == 'white' }}
+        {{ icon_background =  ' grey-icon' }}
+    {{ /if }}
 {{ /if }}
+
+{{ if bg_image }}
+    {{ section_class  .=  ' bg-local bg-no-repeat bg-cover' }}
+    {{ section_style   =  ' style="background-image: url('+{{bg_image}}+')"' }}
+    {{ icon_background =  ' white-icon' }}
+{{ /if }}
+
+{{ if navigation_colour }}
+    {{ icon_background = navigation_colour +'-icon' }}
+{{ /if }}
+
 
 {{# dump #}}
 
+{{ xid =  id }}
+{{ if slug  }}
+    {{ xid =  slug }}
+{{ /if }}
 
 
+{{ if section_link }}
+<a href="{{ section_link }}" 
+    class="block bg-icon {{ icon_background }}"
+>
+{{ else}}
+<div class="bg-icon {{ icon_background }}">
+{{ /if }}
+    <div class="bg-icon-back"></div>    
+    <div class="bg-icon-up"></div>
+    <div class="bg-icon-toggler"></div>
 
 <section id="{{ slug }}" 
-    x-data="{ shown_{{ id }}: false }" 
-    x-intersect.once="shown_{{ id }} = true;"
-    class="{{section_class}} opacity-0"
-    :class="shown_{{ id }} ? 'animate-appearsin' : ''" 
+        x-data="{ 
+            shown_{{ xid }}: false, 
+            load_section: {{ loading_effect ? 'true' : 'false' }},
+            hasCarousel: false
+        }" 
+        x-init="
+            hasCarousel = $el.querySelector('.carousel') !== null;
+            //console.log('hasCarousel '+hasCarousel);
+        "
+        x-intersect.once="shown_{{ xid }} = true;"
+        {{section_style}}
+        class="{{section_class}}"
+        :class="
+        shown_{{ xid }} && load_section ? 'animate-appearsin opacity-0' : '';" 
 >
     {{ columns }}
 
@@ -118,6 +171,14 @@
             {{ /partial:typography/article }}
 
     {{ /columns }}
+
+
 </section>
+    
+{{ if section_link }}
+</a>
+{{ else}}
+</div>
+{{ /if }}
 
 <!-- End: /page_builder/_section.antlers.html -->
