@@ -16,16 +16,16 @@ module.exports = {
     // Here we define the default colors available. If you want to include
     // all default Tailwind colors you should extend the colors instead.
     colors: {
-        black:   '#000',
-        white:  '#fff',
+        black:     '#000',
+        blue:      '#0071CE',
+        darkblue:  '#000F9F',
+        green:     '#00AC69',
+        grey:      '#D9D8D6',
         lightblue: '#65B2E8',
-        blue: '#0071CE',
-        darkblue: '#000F9F',
-        pink: '#E96BB0',
-        yellow: '#FFCD00',
-        orange: '#FF6B00',
-        green: '#00AC69',
-        grey: '#D9D8D6',
+        orange:    '#FF6B00',
+        pink:      '#E96BB0',
+        yellow:    '#FFCD00',
+        white:     '#fff',
         // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
         neutral: {
             DEFAULT: colors.slate['800'],
@@ -37,6 +37,13 @@ module.exports = {
         },
     },
     extend: {
+        //Overwrite Peak colors
+        colors: {
+            blue:   '#0071CE',
+            green:  '#00AC69',
+            pink:   '#E96BB0',
+            yellow: '#FFCD00',
+        },
       // Set default transition durations and easing when using the transition utilities.
       transitionDuration: {
         DEFAULT: '300ms',

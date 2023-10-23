@@ -17,6 +17,8 @@ fields:
         - quote
         - removeformat
         - anchor
+        - color
+        - small
         - alignleft
         - aligncenter
         - alignright
