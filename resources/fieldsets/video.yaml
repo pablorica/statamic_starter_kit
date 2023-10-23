@@ -45,7 +45,7 @@ fields:
       type: toggle
       display: Autoplay
       icon: toggle
-      width: 50
+      width: 33
       listable: hidden
       instructions_position: above
       visibility: visible
@@ -57,10 +57,23 @@ fields:
       type: toggle
       display: Loop
       icon: toggle
-      width: 50
+      width: 33
       listable: hidden
       instructions_position: above
       visibility: visible
+      hide_display: false
+  -
+    handle: show_mute_button
+    field:
+      default: false
+      type: toggle
+      display: 'Show mute/unmute button'
+      icon: toggle
+      width: 33
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
       hide_display: false
   -
     handle: caption

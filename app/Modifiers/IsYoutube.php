@@ -32,6 +32,8 @@ class IsYoutube extends Modifier
             ) {
                 $youtubeid = explode('v=', $value);
                 $youtubeid = $youtubeid[1];
+                $youtubeid = explode('?', $youtubeid);
+                $youtubeid = $youtubeid[0];
                 $youtubeid = explode('&', $youtubeid);
                 $youtubeid = $youtubeid[0];
 
