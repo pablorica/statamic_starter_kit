@@ -1,0 +1,155 @@
+<div
+    x-data="projectsInit()"
+>
+
+    {{# Filters #}}
+    <section 
+        x-show="!hidefilters" 
+        id="" 
+        @hide-filters.window="hidefilters = $event.detail"
+        class="fluid-container grid gap-0 md:grid-cols-12 pt-8">
+
+        {{# w-1/2 w-1/3 w-1/4 #}}
+        {{ taxonomies = ['sectors', 'locations'] }}
+        {{ wrap_class = "w-1/{{ taxonomies | length }} group" }}
+
+        <div class="md:col-span-3 md:col-start-1" >
+            <div class="w-full flex">
+
+                {{ foreach:taxonomies }}
+                    {{ partial:layout/filter-list
+                        :wrap_class="wrap_class" 
+                        :tax="value" 
+                    }}
+                {{ /foreach:taxonomies }}
+            </div>
+
+        </div>
+    </section>
+
+    {{# Projects #}}
+    <section class="fluid-container grid md:grid-cols-12 gap-4 pt-8 pb-8  md:pt-40 md:pb-40"
+        wire:loading.class="loading"
+        wire:loading.class.remove="loaded"
+    >
+
+            {{ unless no_results }}
+            
+                {{ int = 1 }}
+
+                {{ projects }}
+                    {{ num_columns_class = "md:col-span-3"}}
+
+                    {{ grid_caption_floating = false }}
+                    {{ if grid_caption_hposition == 'below' }}
+                        {{ grid_caption_floating = true }}
+                    {{/if}}
+
+                    {{ location_title = '' }}
+                    {{ locations }}
+                        {{ location_title += title + ',' }}
+                    {{ /locations }}
+                    {{# Remove last comma #}}
+                    {{ location_title = location_title | substr(0, -1) }}
+
+                    {{ sector_title = '' }}
+                    {{ sectors }}
+                        {{ sector_title += title + ',' }}
+                    {{ /sectors }}
+                    {{ sector_title = sector_title | substr(0, -1) }}
+
+
+
+
+                    {{ grid_caption = '
+                        <p>
+                            <span class="text-blue">'+ title + '</span><br/>
+                            <span>'+ location_title + '</span><br/>
+                            <span>'+ sector_title + '</span>
+                        </p>' }}
+
+                    <div class="
+                        column
+                        max-w-none
+                        {{ num_columns_class }}
+                    ">
+                        {{ partial:components/card
+                            card_class="max-w-none" 
+                            :card_class="card_class" 
+                            :card_image="image"
+                            card_orientation="landscape"
+                            :card_link="url"
+                            :card_slug="slug"
+                            :card_caption="grid_caption"
+                        }}
+                    </div>
+                    {{ int = int + 1 }}
+                {{ /projects }}
+            {{ else }}
+                <div class="md:col-span-6">
+                    {{ trans:strings.no_results }}
+                </div>
+            {{ /unless }}
+
+            {{# partial:statamic-peak-tools::components/pagination 
+                class="md:col-span-12" 
+            #}}
+    </section>
+
+    <script>
+
+        function projectsInit() {
+
+            return {   
+                hidefilters:               false,
+                filter_clicked:            false,
+            {{ foreach:taxonomies }}
+                expanded_{{ value }}:      false,
+                selected_{{ value }}_slug: {{ livewire:entangle property='selectedSlugs.{ value }' }},
+            {{ /foreach:taxonomies }}
+                    
+                select_filter(
+                    slug, 
+                    filter,
+                    action
+                ) {
+                    //console.log('select_filter action:' + action + ' slug:' + slug + ' filter:' + filter);
+                    if( action == 'add') {
+                        {{ foreach:taxonomies }}
+                            if(filter === '{{ value }}') {
+                                this.selected_{{ value }}_slug.push(slug);
+                            }
+                        {{ /foreach:taxonomies }}
+
+                        document.getElementById(slug).classList.remove('text-primary');
+                        document.getElementById(slug).classList.add('text-black');
+                    }
+                    if( action == 'remove') {
+                        {{ foreach:taxonomies }}
+                            if(filter === '{{ value }}') {
+                                this.selected_{{ value }}_slug = this.selected_{{ value }}_slug.filter(item => item !== slug);
+                            }
+                        {{ /foreach:taxonomies }}
+
+                        document.getElementById(slug).classList.remove('text-black');
+                        document.getElementById(slug).classList.add('text-primary');
+                    }
+
+                    
+                },
+
+                clear_filters( family ) {
+                    {{ foreach:taxonomies }}
+                        if( family === '{{ value }}' ) {
+                            this.selected_{{ value }}_slug = [];
+                        }
+                    {{ /foreach:taxonomies }}
+                },
+                
+            }
+        }
+      
+      </script>
+
+</div>
+<!-- End: /livewire/projects/show-projects.antlers.html -->

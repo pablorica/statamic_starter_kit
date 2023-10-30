@@ -1,0 +1,45 @@
+
+{{#
+    @name Filter lidt
+    @desc HTML code for the filter list.
+    @param wrap_class    CSS class for the wrapper div
+    @param tax           The taxonomy name
+#}}
+
+<div class="{{ wrap_class}}">
+    <button @click="
+            expanded_{{ tax }} = ! expanded_{{ tax }}; 
+            filter_clicked = true;
+        "
+        class="text-blue"
+    >
+        {{ tax | title  }}
+    </button>                     
+    <ul id="{{ tax }}" 
+        x-show="expanded_{{ tax }}" 
+        x-collapse.duration.750ms
+        x-bind:class="
+        expanded_{{ tax }}
+            ? 'expanded'
+            : ''
+        "
+        class="expanse list-none"
+    >
+        <li id="all"
+            class="cursor-pointer hover:text-blue" 
+            x-bind:class="
+            selected_{{ tax }}_slug.length
+                ? 'text-primary'
+                : 'text-blue'
+            "
+            @click="clear_filters('{{ tax }}')"
+        >All</li>
+        {{ taxonomy:{ tax } }}
+            {{ partial:layout/filter-element
+                :slug="slug" 
+                :title="title" 
+                :tax="tax" 
+            }}
+        {{ /taxonomy:{ tax } }}
+    </ul>
+</div>

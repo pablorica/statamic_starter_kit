@@ -4,30 +4,24 @@
 #}}
 
 <!-- /projects/index.antlers.html -->
-<main class="outer-grid" id="content">
+{{ livewire:styles }}
+<main id="projects"
+    class="outer-grid" 
+>
+    <div class="fluid-container grid md:grid-cols-12 gap-8">
+        {{ partial:typography/h1 :content="title" class="md:col-span-12" }}
+    </div>
+
     {{ page_builder scope="block" }}
         {{ partial src="page_builder/{type}" }}
     {{ /page_builder }}
+
+
+    {{ section:index_content }}
+        {{ livewire:projects.show-projects }}
+    {{ /section:index_content }}
+
 </main>
 <!-- End: /projects/index.antlers.html -->
 
-{{ section:index_content }}
-    <!-- /projects/index.antlers.html -->
-    <div class="fluid-container grid md:grid-cols-12 gap-8">
-        {{ partial:typography/h1 :content="title" class="md:col-span-12" }}
-        {{ collection:projects sort="date:desc" paginate="true" limit="12" as="items" }}
-            {{ unless no_results }}
-                {{ items }}
-                    {{ partial:components/projects_item class="md:col-span-4" }}
-                {{ /items }}
-            {{ else }}
-                <div class="md:col-span-6">
-                    {{ trans:strings.no_results }}
-                </div>
-            {{ /unless }}
-
-            {{ partial:statamic-peak-tools::components/pagination class="md:col-span-12" }}
-        {{ /collection:projects }}
-    </div>
-    <!-- End: /projects/index.antlers.html -->
-{{ /section:index_content }}
+{{ livewire:scripts }}
