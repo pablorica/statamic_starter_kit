@@ -52,12 +52,20 @@
     {{ if cookie_embeds }}
         x-data
     {{ /if }}
-    class="{{ wrapper_class }}"
+    class="video-wrapper
+        pb-0
+        {{ wrapper_class }}
+    "
 >
-    <div class="relative aspect-video"
+    {{ calculated_style =  '' }}
     {{ if ratio_width && ratio_height }}
-        {{ 'style="aspect-ratio:'+ratio_width+' / '+ratio_height+'"' }}
+        {{ calculated_padding =  "padding-bottom: "+(ratio_height*100/ratio_width)+"%;"; }}
+        {{ calculated_aspect-ratio =  "aspect-ratio: "+ratio_width+" / "+ratio_height+";";  }}
+        {{ calculated_style =  calculated_padding + ' ' + calculated_aspect-ratio }}
     {{ /if }}
+
+    <div class="relative aspect-video h-full"
+        style = " {{ calculated_style }} "
     >
         {{ if cookie_embeds }}
             <div
@@ -74,7 +82,10 @@
                 {{ else }}
                 <iframe id="video_{{ current_video_url | get_video_id }}"
                     src="{{ current_video_url | embed_url }}"
-                    class="absolute top-0 left-0 w-full h-full" 
+                    class="absolute 
+                    top-1/2 left-1/2 
+                    translate-y-[-50%] translate-x-[-50%] 
+                    w-[10000px] h-full" 
                     width="100%"  
                     height="auto" 
                     frameborder="0" 
@@ -89,7 +100,10 @@
             {{ else }}
             <iframe id="video_{{ current_video_url | get_video_id }}"
                 src="{{ current_video_url | embed_url }}"
-                class="absolute top-0 left-0 w-full h-full" 
+                class="absolute 
+                top-1/2 left-1/2 
+                translate-y-[-50%] translate-x-[-50%] 
+                w-[10000px] h-full" 
                 width="100%"  
                 height="auto" 
                 frameborder="0" 
@@ -150,7 +164,7 @@
         {{ /if }}
     </div>
 
-    {{ partial:typography/caption }}
+    {{ partial:typography/figcaption }}
 
 </div>
 

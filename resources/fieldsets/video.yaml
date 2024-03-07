@@ -1,6 +1,43 @@
 title: Video
 fields:
   -
+    handle: video_type
+    field:
+      options:
+        embed: Embed
+        file: File
+      default: embed
+      type: button_group
+      display: Type
+      icon: button_group
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: video_file
+    field:
+      max_files: 1
+      mode: list
+      container: files
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: File
+      icon: assets
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      always_save: true
+      if:
+        video_type: 'equals file'
+  -
     handle: video_url
     field:
       placeholder: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
@@ -12,6 +49,13 @@ fields:
       display: Video
       instructions: 'YouTube or Vimeo URL.'
       instructions_position: below
+      visibility: visible
+      replicator_preview: true
+      antlers: false
+      hide_display: false
+      always_save: true
+      if:
+        video_type: 'equals embed'
   -
     handle: ratio_width
     field:

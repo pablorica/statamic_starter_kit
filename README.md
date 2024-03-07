@@ -1,6 +1,7 @@
 # Statamic Starter Kit
 A Statamic starter kit based in Statamic Peak
 
+## Version 0.1.10
 
 ## [Statamic Peak](https://github.com/studio1902/statamic-peak#start-out-on-top)
 
@@ -21,3 +22,31 @@ Read more about [how you can contribute](https://peak.1902.studio/other/contribu
 ### [License](https://github.com/studio1902/statamic-peak#license)
 
 Statamic Peak is licensed under the GNU General Public License v3.0. Please see [License File](https://github.com/studio1902/statamic-peak/blob/main/LICENSE.md) for more information. Statamic itself is commercial software and has its' own license.
+
+
+
+## Copyright and License
+
+[](https://github.com/pablorica/wordpress_codigo_theme#copyright-and-license)
+
+Copyright 2024 Statamic Starter Kit released under the [MIT](https://github.com/pablorica/citysuburban/blob/main/LICENSE) license.
+
+## Versioning
+
+
+We use [SemVer](https://semver.org/) for versioning.
+
+### Changelog
+
+
+```
+0.1.10
+    CSS style changed to allow embed videos from Youtube or Vimeo to adapt to any aspect ratio.
+
+0.1.9
+    Adding Video block
+
+0.1.8
+    First copy of the Statamic Peak theme
+
+```
