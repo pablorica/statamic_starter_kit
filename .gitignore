@@ -109,21 +109,13 @@ public/1n7h0.php
 # ignore users directories
 /users
 
-# ignore content directories editable by editors
-/content/collections/*/*.md
-/content/taxonomies/*/*.yaml
+# ignore content 
+#/content
 
-# Ignore custom files and directories
-/public/js/
-/public/css/
-/public/hot
-/public/storage
-/public/vendor/statamic
-/public/img/
-/public/images/*.*
-/public/static/
-/public/build/
+# Ignore public files
+/public
 
+# Ignore Storage files
 /storage/*.key
 /storage/forms
 
@@ -169,6 +161,10 @@ resources/views/vendor/livewire/
 !safari-pinned-tab.svg
 !site.webmanifest
 
+
+# Track these content files, if they exist
+#!content/assets/*.*
+#!content/navigation/*.*
 
 # track peak image, if it exists
 !public/images/a-peak.jpg

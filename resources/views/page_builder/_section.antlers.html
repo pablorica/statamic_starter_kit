@@ -87,6 +87,7 @@
 
 {{ xid =  id }}
 {{ if slug  }}
+    {{ slug =  slug | slugify | replace('-', '') }}
     {{ xid =  slug }}
 {{ /if }}
 

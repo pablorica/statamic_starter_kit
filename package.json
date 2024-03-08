@@ -18,10 +18,13 @@
       "@alpinejs/persist": "^3.12.1",
       "alpinejs": "^3.12.1",
       "focus-visible": "^5.2.0",
-      "photoswipe": "^5.3.8",
+      "photoswipe": "^5.4.0",
+      "photoswipe-dynamic-caption-plugin": "^1.2.7",
+      "tiny-slider": "^2.9.4",
       "puppeteer": "^20.4.0"
     },
     "devDependencies": {
+      "@csstools/postcss-oklab-function": "^3.0.1",
       "@tailwindcss/forms": "^0.5.3",
       "@tailwindcss/typography": "^0.5.9",
       "autoprefixer": "10.4.14",

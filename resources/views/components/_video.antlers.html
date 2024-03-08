@@ -64,7 +64,11 @@
         {{ calculated_style =  calculated_padding + ' ' + calculated_aspect-ratio }}
     {{ /if }}
 
-    <div class="relative aspect-video h-full"
+    <div class="relative 
+        aspect-video 
+        h-full 
+        overflow-hidden
+    "
         style = " {{ calculated_style }} "
     >
         {{ if cookie_embeds }}
@@ -196,11 +200,33 @@
     {{ /if }}
 
     {{ if current_video_url | is_youtube }}
+    <style>
+        iframe#video_{{ current_video_url | get_video_id }} {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            width: 10000px;
+            height: 100%;
+        }
+    </style>
     <script>
         // @see https://developers.google.com/youtube/iframe_api_reference
 
         var youScript = 'youScript';  // Load Youtube remote scripts  and API functions only once.
         if (!document.getElementById(youScript)) {
+
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('existing-iframe-example', {
+                    events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+
 
             var tag = document.createElement('script');
 
