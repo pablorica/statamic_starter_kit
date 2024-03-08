@@ -99,7 +99,7 @@ This project adheres to [Semantic Versioning](https://semver.org/) for versionin
     Updated "About Us" page with background colours
 
 0.1.29
-    Default size set to maximun for column element in all viewports
+    Default size set to maximum for column element in all viewports
 
 0.1.28
     Added scrolldown button antler
