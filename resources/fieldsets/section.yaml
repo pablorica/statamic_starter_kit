@@ -61,7 +61,7 @@ fields:
                     visibility: visible
                     hide_display: false
                     replicator_preview: true
-                    default: 0
+                    default: 12
                 -
                   handle: set_horizontal_position
                   field:
@@ -158,7 +158,7 @@ fields:
                     visibility: visible
                     hide_display: false
                     replicator_preview: true
-                    default: 0
+                    default: 6
                 -
                   handle: mobile_top_padding
                   field: common.top_padding
@@ -214,7 +214,7 @@ fields:
                     visibility: visible
                     hide_display: false
                     replicator_preview: true
-                    default: 0
+                    default: 12
                 -
                   handle: tablet_horizontal_position
                   field:

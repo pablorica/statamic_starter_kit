@@ -1,0 +1,28 @@
+{{#
+    @name Scroll down button
+    @desc Button to scroll down.
+#}}
+<!-- /navigation/_scrolldown_button.antlers.html -->
+<button x-on:click.prevent="window.scrollTo({top: window.innerHeight, behavior: 'smooth'});"
+    class="absolute 
+    bottom-8 
+    left-1/2 
+    z-20 
+    -translate-x-1/2" 
+>
+    <div class="animate-bounce">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+            width="62" 
+            height="62" 
+            viewBox="0 0 62 62" 
+            fill="none"
+            class="-rotate-90
+                w-8 md:w-[62px]
+                h-auto"
+        >
+            <circle cx="31" cy="31" r="31"  fill="#FFFFFF"/>
+            <path d="M31 45.6136L16.3865 31M16.3865 31L31 16.3865M16.3865 31L45.6135 31" stroke="black" stroke-width="2.2"/>
+        </svg>
+    </div>
+</button>
+<!-- End: /navigation/_scrolldown_button.antlers.html -->

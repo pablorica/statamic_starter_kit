@@ -95,6 +95,18 @@ This project adheres to [Semantic Versioning](https://semver.org/) for versionin
 
 
 ```
+0.1.30
+    Updated "About Us" page with background colours
+
+0.1.29
+    Default size set to maximun for column element in all viewports
+
+0.1.28
+    Added scrolldown button antler
+
+0.1.27
+    Updated "About Us" page with collapsible section
+
 0.1.26
     Added collapsed sections
 
