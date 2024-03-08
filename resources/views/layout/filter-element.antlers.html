@@ -11,8 +11,8 @@
     class="cursor-pointer hover:text-blue" 
     x-bind:class="
     selected_{{ tax }}_slug.includes('{{ slug }}')
-        ? 'text-blue'
-        : 'text-primary'
+        ? 'text-primary'
+        : 'text-black'
     "
     @click="select_filter(  
         '{{ slug }}', 

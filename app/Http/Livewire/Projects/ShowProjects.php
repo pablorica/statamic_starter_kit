@@ -11,7 +11,7 @@ class ShowProjects extends Component
 
     public $selectedSlugs = [
         'sectors'   => [],
-        'expertises' => [],
+        'locations' => [],
     ];
 
     /**

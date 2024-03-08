@@ -95,6 +95,12 @@ This project adheres to [Semantic Versioning](https://semver.org/) for versionin
 
 
 ```
+0.1.24
+    Fixed Livewire filters.
+
+0.1.23
+    Fixed wrong taxonomy slug in Livewire class.
+
 0.1.22
     Updated README.md. The versioning is now in the GIT tags.
 

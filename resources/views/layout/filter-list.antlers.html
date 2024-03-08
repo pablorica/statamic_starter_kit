@@ -11,7 +11,7 @@
             expanded_{{ tax }} = ! expanded_{{ tax }}; 
             filter_clicked = true;
         "
-        class="text-blue"
+        class="text-black"
     >
         {{ tax | title  }}
     </button>                     
@@ -29,8 +29,8 @@
             class="cursor-pointer hover:text-blue" 
             x-bind:class="
             selected_{{ tax }}_slug.length
-                ? 'text-primary'
-                : 'text-blue'
+                ? 'text-black'
+                : 'text-primary'
             "
             @click="clear_filters('{{ tax }}')"
         >All</li>
