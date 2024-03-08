@@ -95,6 +95,12 @@ This project adheres to [Semantic Versioning](https://semver.org/) for versionin
 
 
 ```
+0.1.26
+    Added collapsed sections
+
+0.1.25
+    Added viewports to sections and columns
+
 0.1.24
     Fixed Livewire filters.
 
