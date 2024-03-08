@@ -1,8 +1,6 @@
 # Statamic Starter Kit
 A Statamic starter kit based in Statamic Peak
 
-## Version 0.1.10
-
 ## Installation instructions
 
 1. run `composer install`
@@ -97,6 +95,9 @@ This project adheres to [Semantic Versioning](https://semver.org/) for versionin
 
 
 ```
+0.1.22
+    Updated README.md. The versioning is now in the GIT tags.
+
 0.1.21
     Updated gitignore. The content folder is on the repository again
 
