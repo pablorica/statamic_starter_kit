@@ -208,5 +208,12 @@ module.exports = {
       }
       addUtilities(newUtilities)
     }),
+    // Custom variants for this particular site.
+    plugin(function ({ addVariant }) {
+        addVariant('mobile-only', "@media screen and (max-width: theme('screens.sm'))"); 
+        // instead of hard-coded 640px use sm breakpoint value from config. Or anything
+        addVariant('tablet-only', "@media screen and (min-width: theme('screens.sm')) and (max-width: theme('screens.lg'))");
+        addVariant('mbtb-only', "@media screen and (max-width: theme('screens.lg'))");
+    }),
   ]
 }

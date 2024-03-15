@@ -377,9 +377,13 @@
             {{ /if }}
 
             {{ if horizontal_position > 0 }}
-                {{ col_start =  ' md:col-start-'+ horizontal_position }}
+                {{ col_start =  ' md:col-start-'+ horizontal_position +' 
+                                xl:col-start-'+ horizontal_position  
+                }}
                 {{ if tablet_horizontal_position > 0 }}
-                    {{ col_start =  ' md:col-start-'+ tablet_horizontal_position +' xl:col-start-'+ horizontal_position  }}
+                    {{ col_start =  ' md:col-start-'+ tablet_horizontal_position +' 
+                                    xl:col-start-'+ horizontal_position  
+                    }}
                 {{ /if }}
             {{ /if }}
 

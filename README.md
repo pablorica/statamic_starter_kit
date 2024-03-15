@@ -95,6 +95,9 @@ This project adheres to [Semantic Versioning](https://semver.org/) for versionin
 
 
 ```
+0.1.31
+   Added custom variants 'mobile-only', 'tablet-only'and 'mbtb-only' (mobile and tablet only)
+
 0.1.30
     Updated "About Us" page with background colours
 
