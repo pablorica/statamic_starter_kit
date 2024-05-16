@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: ead679e8-22dd-4ff4-abcb-8bd330197ea7
-updated_at: 1715869436
+updated_at: 1715900389
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -80,6 +80,10 @@ page_builder:
                     enabled: true
                 navigation_arrows: true
                 indicator_buttons: true
+                full_size: true
+                navigation: true
+                autoplay: true
+                transition: gallery
         top_padding: -1
         right_padding: -1
         bottom_padding: -1
