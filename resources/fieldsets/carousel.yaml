@@ -27,7 +27,6 @@ fields:
                     display: Caption
       type: replicator
       display: Carousel
-      icon: replicator
       listable: hidden
       instructions_position: above
       visibility: visible
@@ -38,21 +37,59 @@ fields:
       default: false
       type: toggle
       display: 'Navigation arrows'
-      icon: toggle
-      width: 50
+      width: 33
       listable: hidden
       instructions_position: above
       visibility: visible
       hide_display: false
   -
-    handle: indicator_buttons
+    handle: navigation
     field:
       default: false
       type: toggle
-      display: 'Indicator Buttons'
-      icon: toggle
-      width: 50
+      display: 'Navigation buttons'
+      width: 33
       listable: hidden
       instructions_position: above
       visibility: visible
+      hide_display: false
+      replicator_preview: true
+  -
+    handle: full_size
+    field:
+      default: false
+      type: toggle
+      display: 'Full size'
+      width: 33
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      replicator_preview: true
+  -
+    handle: autoplay
+    field:
+      default: false
+      type: toggle
+      display: Autoplay
+      width: 33
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      replicator_preview: true
+  -
+    handle: transition
+    field:
+      options:
+        carousel: Slide
+        gallery: Fade
+      default: carousel
+      type: button_group
+      display: Transition
+      width: 66
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
       hide_display: false
