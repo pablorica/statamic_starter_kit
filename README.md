@@ -1,6 +1,9 @@
 # Statamic Starter Kit
 A Statamic starter kit based in Statamic Peak
 
+[![version](https://img.shields.io/badge/version-0.1.34-yellow.svg)](https://semver.org)
+
+
 ## Installation instructions
 
 1. run `composer install`
@@ -276,6 +279,16 @@ This project adheres to [Semantic Versioning](https://semver.org/) for versionin
 
 
 ```
+0.1.34
+   By default, presets will NOT be automatically generated on upload. 
+   To enable this feature, set the `generate_presets_on_upload` option to `true` in your `config/statamic/assets.php` file.
+
+0.1.33
+   Added global Glide option: Enable/Disable glide in images
+
+0.1.32
+   Added scrolldown button options (display_scrolldown_button, scroll_down_button_link)
+
 0.1.31
    Added custom variants 'mobile-only', 'tablet-only'and 'mbtb-only' (mobile and tablet only)
 
