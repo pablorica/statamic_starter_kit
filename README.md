@@ -73,6 +73,14 @@ This is becasue the local server has a SSL certificate not recognizable by Larav
 In that case simply remove the SSL from youyr local server and use HTTP instead of HTTPS.
 
 
+## Site errors
+
+### 403 Forbidden
+
+The home page is not loading and the error is 403 Forbidden. 
+Check that the swerver configuration is pointing to the correct folder: `public` 
+
+
 ## Additional commands
 
 ### Clear cache and static files
