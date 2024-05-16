@@ -12,6 +12,9 @@ export default defineConfig(({ command, mode }) => {
     const host = url.replace(/^https?:\/\//, '')
     const useBrowserSync = env.VITE_BROWSERSYNC && ip
 
+    console.log('The URL is ', url);
+    console.log('isSecuredSite? ', isSecuredSite);
+
     if (useBrowserSync && isSecuredSite) {
         console.log('\x1b[31m%s\x1b[0m', 'Sorry, we didn\'t manage to get BrowserSync working with secured sites.');
         console.log('\x1b[31m%s\x1b[0m', 'If you can provide a solution, please enlighten us (https://github.com/studio1902/statamic-peak/pulls).');
@@ -25,6 +28,7 @@ export default defineConfig(({ command, mode }) => {
                 valetTls: isSecuredSite ? host : false,
                 input: [
                     'resources/css/site.css',
+                    'resources/scss/app.scss',
                     'resources/js/site.js',
                 ]
             }),

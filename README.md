@@ -279,6 +279,10 @@ This project adheres to [Semantic Versioning](https://semver.org/) for versionin
 
 
 ```
+0.1.36
+   Add SASS
+0.1.35
+   Remove webpack.mix.js (deprecated)
 0.1.34
    By default, presets will NOT be automatically generated on upload. 
    To enable this feature, set the `generate_presets_on_upload` option to `true` in your `config/statamic/assets.php` file.
