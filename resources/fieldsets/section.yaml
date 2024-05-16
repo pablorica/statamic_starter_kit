@@ -1,6 +1,19 @@
 title: Section
 fields:
   -
+    handle: slug
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Slug
+      instructions: 'Use this field to apply a unique ID to this section to be used with jump links'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      width: 33
+  -
     handle: columns
     field:
       collapse: true
@@ -250,19 +263,6 @@ fields:
       visibility: visible
       hide_display: false
   -
-    handle: slug
-    field:
-      input_type: text
-      antlers: false
-      type: text
-      display: Slug
-      instructions: 'Use this field to apply a unique ID to this section to be used with jump links'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
-      width: 33
-  -
     handle: navigation_colour
     field:
       options:
@@ -277,7 +277,6 @@ fields:
       type: select
       display: 'Navigation colour'
       instructions: 'The colour of the navigation buttons will change according to the background of the section when they are over it. However, you can force this colour by selecting it here.'
-      width: 66
       listable: hidden
       instructions_position: above
       visibility: visible
@@ -461,6 +460,14 @@ fields:
       instructions_position: above
       visibility: visible
       hide_display: false
+  -
+    handle: scroll_down_button_link
+    field: collapse.collapse_title
+    config:
+      display: 'scroll-down Button Link'
+      width: 33
+      if:
+        display_scrolldown_button: 'equals true'
   -
     handle: collapse
     field:
