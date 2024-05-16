@@ -462,10 +462,18 @@ fields:
       hide_display: false
   -
     handle: scroll_down_button_link
-    field: collapse.collapse_title
-    config:
+    field:
+      input_type: text
+      antlers: false
+      type: text
       display: 'scroll-down Button Link'
+      instructions: 'If empty, the page will scroll down the same height as the device screen'
       width: 33
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
       if:
         display_scrolldown_button: 'equals true'
   -

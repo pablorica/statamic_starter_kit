@@ -159,8 +159,12 @@
 {{ /if }}
 
 
+{{ if display_scrolldown_button || section_over_floating_logo }}
+    {{ section_class  .=  ' relative' }}
+{{ /if }}
+
 {{ if section_over_floating_logo }}
-    {{ section_class  .=  ' relative z-[4]' }}
+    {{ section_class  .=  ' z-[4]' }}
 {{ /if }}
 
 {{# dump #}}
