@@ -58,17 +58,11 @@
 >
 
     <header class="fluid-container grid md:grid-cols-12 gap-4 w-full p-0">
-        <figure class="w-full max-w-none md:col-span-12 p-0 h-screen ">
-            {{ partial:statamic-peak-tools::components/picture 
-                :image="image" 
-                sizes="100vw" 
-                aspect_ratio="3/2" 
-                lazy="true" 
-                cover="true" 
-                class="aspect-[3/2]" 
-            }}
-        </figure>
-        
+        {{  partial:components/image
+            :image="image" 
+            figure_class="w-full max-w-none md:col-span-12 p-0 h-screen "
+            ratio="3/2" 
+        }}
     </header>
     
     <section id="metaInfo" 

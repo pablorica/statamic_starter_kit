@@ -6,44 +6,72 @@
 
 <!-- /components/_carousel.antlers.html -->
 <div class="my-0 relative w-full h-screen overflow-hidden carousel">
-     <!-- Prev arrow button -->
-     <button 
-        class="cursor-pointer absolute top-1/2 -translate-y-1/2 left-3 z-10 prev-button"
-     >
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="24" r="24" transform="rotate(-180 24 24)" fill="white"/>
-            <path d="M24 35.3145L12.6863 24.0007M12.6863 24.0007L24 12.687M12.6863 24.0007L35.3137 24.0007" stroke="black" stroke-width="2.2"/>
-        </svg>
-    </button>
+    <!-- Prev arrow button -->
+    <button 
+       class="cursor-pointer 
+           absolute 
+           top-1/2 
+           -translate-y-1/2 
+           left-3 
+           z-10 
+           prev-button
+   ">
+       {{  partial:icons/arrow
+           svg_width="48"
+           svg_height="48"
+           svg_class="w-8 md:w-[48px]
+           h-auto" 
+           circle_class="fill-white"
+           path_class="stroke-black stroke-[2.2]"
+       }}
+   </button>
 
-    <div class="tiny-carousel">
-        {{ carousel }}
-            <div class="item top-0 bottom-0 py-2 md:py-40 md:px-40 w-full h-full !align-middle flex flex-col items-center justify-center">
-                <figure class="not-prose w-full h-full">
-                    {{ partial:statamic-peak-tools::components/picture 
-                        :image="image" 
-                        sizes="90vw, (min-width: 1280px) 80vw" 
-                        class="object-contain w-full h-full max-h-[62vh]" 
-                    }}
-                </figure>
-                {{ partial:typography/p
-                    :content="caption" 
-                    class="text-center mt-3"
-                }}
-            </div>
-        {{ /carousel }}
-    </div>
+   <div class="tiny-carousel">
+       {{ carousel }}
+           <div class="item 
+               top-0 bottom-0 
+               py-2 md:py-40 md:px-40 
+               w-full h-full 
+               !align-middle 
+               flex flex-col 
+               items-center justify-center
+           ">
+               {{  partial:components/image
+                   :image="image" 
+                   figure_class="w-full h-full"
+                   sizes="90vw, (min-width: 1280px) 80vw" 
+                   img_class="object-contain w-full h-full max-h-[62vh]" 
+               }}
 
-    <!-- Next arrow button -->
-    <div class="box flex justify-center">
-            
-        <button class="cursor-pointer absolute top-1/2 -translate-y-1/2 right-3 z-10 next-button ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="white"/>
-                <path d="M24 12.6855L35.3137 23.9993M35.3137 23.9993L24 35.313M35.3137 23.9993L12.6863 23.9993" stroke="black" stroke-width="2.2"/>
-            </svg>
-        </button>
-    </div>
+               {{ partial:typography/p
+                   :content="caption" 
+                   class="text-center mt-3"
+               }}
+           </div>
+       {{ /carousel }}
+   </div>
+
+   <!-- Next arrow button -->
+   <div class="box flex justify-center">
+       <button class="cursor-pointer 
+           absolute 
+           top-1/2 
+           -translate-y-1/2 
+           right-3 
+           z-10 
+           next-button
+       ">
+           {{  partial:icons/arrow
+               svg_width="48"
+               svg_height="48"
+               svg_class="rotate-180 
+                   w-8 md:w-[48px]
+                   h-auto" 
+               circle_class="fill-white"
+               path_class="stroke-black stroke-[2.2]"
+           }}
+       </button>
+   </div>
 
 </div>
 <!-- End: /components/_carousel.antlers.html -->

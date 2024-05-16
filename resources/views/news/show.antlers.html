@@ -52,16 +52,11 @@
                 }}
             </div>
 
-            <figure class="mt-4  md:col-span-8 ">
-                {{ partial:statamic-peak-tools::components/picture 
-                    :image="image" 
-                    sizes="100vw, (min-width: 768px) 90vw, (min-width: 1280px) 80vw" 
-                    aspect_ratio="3/2" 
-                    lazy="true" 
-                    cover="true" 
-                    class="aspect-[3/2]" 
-                }}
-            </figure>
+            {{  partial:components/image
+                :image="image" 
+                figure_class="mt-4 md:col-span-8"
+                ratio="3/2" 
+            }}
         </header>
 
     </section>

@@ -50,16 +50,12 @@
             max-w-none
             md:col-span-6 md:row-span-2 md:pt-0 md:pr-0 md:pb-0 md:pl-0
         ">
-            <figure class="not-prose size-md ">
-                {{ partial:statamic-peak-tools::components/picture 
-                    :image="entrycard_image" 
-                    sizes=" 90vw, (min-width: 768px) 50vw" 
-                    aspect_ratio="16/9" 
-                    lazy="true" 
-                    cover="true"
-                    class="aspect-16/9"
-                }}
-            </figure>
+            {{  partial:components/image
+                :image="image" 
+                figure_class="size-md"
+                ratio="16/9" 
+                sizes=" 90vw, (min-width: 768px) 50vw" 
+            }}
         </div>
     </div>
     </a>
