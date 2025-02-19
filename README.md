@@ -220,6 +220,94 @@ STATAMIC_CUSTOM_LOGO_OUTSIDE_URL="/visuals/<project-logo>.svg"
 #STATAMIC_CUSTOM_CSS_URL=
 ```
 
+---
+
+## Instagram
+
+[Statamic Instagram Plugin](https://statamic.com/addons/marcorieser/statamic-instagram)
+
+This new plugin will replace the old one `nineteensquared/instagram`, which has been abandoned.
+
+### Features
+
+- Fetch Instagram posts via Meta's Instagram Business API  
+- Auto-refreshing of Access Tokens  
+
+
+### How to Install
+
+First, remove the old package:
+
+```bash
+composer remove nineteensquared/instagram
+```
+
+Then, install the new one:
+
+```bash
+composer require marcorieser/statamic-instagram
+...
+Using version ^2.0 for marcorieser/statamic-instagram
+```
+
+
+### How to Use
+
+#### Installation Steps
+
+1. Install the addon  
+2. Publish the addon config by running:  
+
+   ```bash
+   php artisan vendor:publish --tag=statamic-instagram-config
+   ```
+
+3. A new file `config/statamic-instagram.php` will be created  
+4. Add your Access Token to the account section in the published config file  
+
+```php
+return [
+    'limit' => 12,
+
+    'include_child_posts' => false,
+
+    'cache' => [
+        'key_prefix' => 'instagram',
+        'duration' => 60 * 60 * 24, // 1 day
+    ],
+
+    'accounts' => [
+        [
+            'handle' => 'default',
+            'access_token' => 'YOUR TOKEN HERE',
+        ],
+    ]
+];
+```
+
+If you do not have a token, follow the instructions below.
+
+
+### Creating a Meta App / Access Token
+
+Create an Access Token for the API with these steps:
+
+1. Log in with your Instagram credentials at [Facebook Developers](https://developers.facebook.com)  
+2. Create a new app (choose **Other** as the use case and **Business** as the app type)  
+3. Add **Instagram** as a product to your app  
+4. Link your Instagram account at **Generate access tokens** in the API setup with the Instagram login section of your app  
+5. Generate a token and add it to the config in Statamic  
+
+Further information is available in [Meta's documentation](https://developers.facebook.com/docs/).
+
+
+
+### Display the Feed
+
+You can use the `{{ instagram:feed }}` tag to fetch media from the API and return them as an array.
+
+---
+
 ## NGINX config
 
 If you have a NGINX server, use these instructions for the configuration file
@@ -241,133 +329,23 @@ map $sent_http_content_type $expires {
 }
 ```
 
+## Updating Statamic
+
+[UPDATING.md](https://github.com/pablorica/statamic_starter_kit/blob/main/UPDATING.md)
 
 
-## [Statamic Peak](https://github.com/studio1902/statamic-peak#start-out-on-top)
+## Acknowledgements
 
-Peak is your personal development sherpa. It's an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind CSS and AlpineJS and a workflow you can use to build anything you want. Peak features a page builder, a rich collection of starter templates, fieldsets, blueprints, SEO functionality, configuration and more to get you started on your clients' site straight away. Peak is easy to extend or edit to fit your clients' website needs and will drastically improve your development speed.
-
-The aim of Peak is to make it easy to start new projects as they often share much of the same principles. Whether you're new to Statamic or a veteran, there will be something interesting in here for you. Please participate and discuss on how to make our websites better.
-
-Maintaining Peak demands a lot of my time and it probably saves you a lot. Your sponsoring would mean a great deal to me as it makes it much easier for me to maintain this project and keep improving it. [Sponsor me](https://github.com/sponsors/studio1902).
-
-[Read the docs](https://peak.1902.studio).
-
-### [Contributing](https://github.com/studio1902/statamic-peak#contributing)
-
-Contributions and discussions are always welcome, no matter how large or small. Treat each other with respect. Read the [Code of Conduct](https://github.com/studio1902/statamic-peak/blob/main/.github/CODE_OF_CONDUCT.md).
-
-Read more about [how you can contribute](https://peak.1902.studio/other/contributing.html) here.
-
-### [License](https://github.com/studio1902/statamic-peak#license)
-
-Statamic Peak is licensed under the GNU General Public License v3.0. Please see [License File](https://github.com/studio1902/statamic-peak/blob/main/LICENSE.md) for more information. Statamic itself is commercial software and has its' own license.
-
-
+* [Statamic Starter Kit](https://github.com/pablorica/statamic_starter_kit)
 
 ## Copyright and License
 
-[](https://github.com/pablorica/wordpress_codigo_theme#copyright-and-license)
-
-Copyright 2024 Statamic Starter Kit released under the [MIT](https://github.com/pablorica/citysuburban/blob/main/LICENSE) license.
+Copyright 2023 Art Form website released under the [MIT](https://github.com/pablorica/statamic_starter_kit/blob/main/LICENSE) license.
 
 ## Versioning
 
-This project adheres to [Semantic Versioning](https://semver.org/) for versioning. 
+We use [SemVer](https://semver.org/) for versioning.
 
 ### Changelog
 
-
-```
-0.1.37
-   Add Carousel component
-
-0.1.36
-   Add SASS
-
-0.1.35
-   Remove webpack.mix.js (deprecated)
-
-0.1.34
-   By default, presets will NOT be automatically generated on upload. 
-   To enable this feature, set the `generate_presets_on_upload` option to `true` in your `config/statamic/assets.php` file.
-
-0.1.33
-   Added global Glide option: Enable/Disable glide in images
-
-0.1.32
-   Added scrolldown button options (display_scrolldown_button, scroll_down_button_link)
-
-0.1.31
-   Added custom variants 'mobile-only', 'tablet-only'and 'mbtb-only' (mobile and tablet only)
-
-0.1.30
-    Updated "About Us" page with background colours
-
-0.1.29
-    Default size set to maximum for column element in all viewports
-
-0.1.28
-    Added scrolldown button antler
-
-0.1.27
-    Updated "About Us" page with collapsible section
-
-0.1.26
-    Added collapsed sections
-
-0.1.25
-    Added viewports to sections and columns
-
-0.1.24
-    Fixed Livewire filters.
-
-0.1.23
-    Fixed wrong taxonomy slug in Livewire class.
-
-0.1.22
-    Updated README.md. The versioning is now in the GIT tags.
-
-0.1.21
-    Updated gitignore. The content folder is on the repository again
-
-0.1.20
-    Updated "About Us" page with more video examples
-
-0.1.19
-    Updated Video Antlers
-
-0.1.18
-    Added slugify to section slug to avoid JS errors
-
-0.1.17
-    Updated README.md
-
-0.1.16
-    Added resources/views/typography/_figcaption.antlers.html
-
-0.1.15
-    Updated Video
-
-0.1.14
-    Added "tiny-slider": "^2.9.4"
-
-0.1.13
-    Added "photoswipe": "^5.4.0" and "photoswipe-dynamic-caption-plugin": "^1.2.7"
-
-0.1.12
-    Added "@csstools/postcss-oklab-function": "^3.0.1"
-
-0.1.11
-    Updated gitignore
-
-0.1.10
-    CSS style changed to allow embed videos from Youtube or Vimeo to adapt to any aspect ratio.
-
-0.1.9
-    Adding Video block
-
-0.1.8
-    First copy of the Statamic Peak theme
-
-```
+[CHANGELOG.md](https://github.com/pablorica/statamic_starter_kit/blob/main/CHANGELOG.md)
