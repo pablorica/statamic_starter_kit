@@ -1,7 +1,7 @@
 # Statamic Starter Kit
 A Statamic starter kit based in Statamic Peak
 
-[![version](https://img.shields.io/badge/version-0.1.37-yellow.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.2.1-yellow.svg)](https://semver.org)
 
 
 ## Installation instructions
