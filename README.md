@@ -1,6 +1,6 @@
-# 10 Design
+# Statamic Starter Kit
 
-A Statamic website for [10Design](https://10sb.co/) based in [Statamic Starter Kit](https://github.com/pablorica/statamic_starter_kit) 
+A Statamic starter kit based in [Statamic Peak](https://statamic.com/starter-kits/studio1902/peak) 
 
 
 [![version](https://img.shields.io/badge/version-0.3.5-blue.svg)](https://semver.org)
