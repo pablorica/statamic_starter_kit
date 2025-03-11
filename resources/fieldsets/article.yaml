@@ -9,7 +9,6 @@ fields:
         - h3
         - h4
         - h5
-        - h6
         - bold
         - italic
         - unorderedlist
@@ -17,27 +16,27 @@ fields:
         - quote
         - removeformat
         - anchor
-        - color
+        - underline
+        - strikethrough
         - small
+        - superscript
+        - subscript
         - alignleft
         - aligncenter
         - alignright
         - alignjustify
-      save_html: false
-      toolbar_mode: fixed
-      link_noopener: false
-      link_noreferrer: false
-      target_blank: false
+        - color
       reading_time: true
-      fullscreen: true
-      allow_source: true
       type: bard
       localizable: true
-      listable: hidden
       display: Article
       replicator_preview: false
       validate:
         - required
+      container: files
+      always_save: false
+      remove_empty_nodes: trim
+      smart_typography: true
       sets:
         interactive:
           display: Interactive
@@ -51,31 +50,12 @@ fields:
               fields:
                 -
                   import: buttons
-            form:
-              display: Form
-              instructions: null
-              icon: form-text-field
-              fields:
-                -
-                  handle: form
-                  field: form.form
-                  config:
-                    validate:
-                      - required
             carousel:
               display: Carousel
-              instructions: null
               icon: layout-carousel-horizontal
               fields:
                 -
                   import: carousel
-            related_entry:
-              display: 'Related Entry'
-              instructions: null
-              icon: media-news-paper
-              fields:
-                -
-                  import: related_entry
         text:
           display: Text
           instructions: 'Text based sets.'
@@ -97,7 +77,7 @@ fields:
                   import: table
         image_video:
           display: 'Image & video'
-          instructions: 'Sets with images or embeddable video''s.'
+          instructions: "Sets with images or embeddable video's."
           icon: media-image-camera
           sets:
             image:
@@ -114,18 +94,3 @@ fields:
               fields:
                 -
                   import: video
-      container: files
-      enable_input_rules: true
-      enable_paste_rules: true
-      instructions_position: above
-      visibility: visible
-      always_save: false
-      previews: true
-      antlers: false
-      remove_empty_nodes: trim
-      collapse: false
-      smart_typography: true
-      inline: false
-      hide_display: false
-      word_count: false
-      always_show_set_button: false

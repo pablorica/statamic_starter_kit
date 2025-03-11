@@ -11,13 +11,7 @@ tabs:
             field:
               type: textarea
               required: true
-              antlers: false
               display: Title
-              icon: textarea
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
               validate:
                 - required
               width: 75
@@ -82,29 +76,20 @@ tabs:
             field:
               type: slug
               localizable: true
-              generate: true
-              listable: hidden
-              display: Slug
               validate:
                 - required
+              display: Slug
           -
             handle: date
             field:
               type: date
-              required: true
               default: now
               listable: true
               validate:
                 - required
               display: Date
-              mode: single
-              time_enabled: false
               time_required: false
               earliest_date: '2021-01-01'
-              full_width: false
-              inline: false
-              columns: 1
-              rows: 1
           -
             handle: image
             field: common.image
@@ -122,36 +107,17 @@ tabs:
                 - locations
               display: Locations
               mode: select
-              instructions_position: above
-              listable: hidden
-              visibility: visible
               max_items: 1
-              create: true
-              hide_display: false
           -
             handle: location_area
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Area
-              icon: text
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
           -
             handle: client
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Client
-              icon: text
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
           -
             handle: sectors
             field:
@@ -160,24 +126,12 @@ tabs:
                 - sectors
               display: Sectors
               mode: select
-              instructions_position: above
-              listable: hidden
-              visibility: visible
               max_items: 1
-              create: true
-              hide_display: false
           -
             handle: project_date
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Project Date'
-              icon: text
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
           -
             import: related_entry
             prefix: bottom_

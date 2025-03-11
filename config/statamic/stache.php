@@ -53,16 +53,6 @@ return [
             'directory' => base_path('content/navigation'),
         ],
 
-        'collection-trees' => [
-            'class' => Stores\CollectionTreeStore::class,
-            'directory' => base_path('content/trees/collections'),
-        ],
-
-        'nav-trees' => [
-            'class' => Stores\NavTreeStore::class,
-            'directory' => base_path('content/trees/navigation'),
-        ],
-
         'globals' => [
             'class' => Stores\GlobalsStore::class,
             'directory' => base_path('content/globals'),
@@ -71,10 +61,6 @@ return [
         'asset-containers' => [
             'class' => Stores\AssetContainersStore::class,
             'directory' => base_path('content/assets'),
-        ],
-
-        'assets' => [
-            'class' => Stores\AssetsStore::class,
         ],
 
         'users' => [

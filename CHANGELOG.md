@@ -6,28 +6,60 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [0.3.5] - 2025-03-11
 
-## [0.2.1] - 2025-02-19
+### Added
+
+- `Bard Text Color` add-on
+
+## [0.3.4] - 2025-03-11
+
 
 ### Updated
 
-- New Instagram add-on
+- Image block
+
+### Added
+
+- `Glide enabled|disabled` global option
 
 
-## [0.2.0] - 2025-02-19
+## [0.3.3] - 2025-03-11
+
+### Added
+
+- `Projects` collection
+
+
+## [0.3.2] - 2025-03-11
+
+### Added
+
+- Video block
+- Video antlers
+- Video Modifiers
+
+## [0.3.1] - 2025-03-10
+
+### Added
+
+- Alpine Intersect
+- Carousel component
+
+
+## [0.3.0] - 2025-03-10
 
 ### Updated
 
-- Statamic (and the rest of elements) updated to the latest version
+- Statamic (and the rest of elements) updated to the latest version 
+     - Statamic 5.50.0
+     - Peak 20.6.2 
+     - Tailwind 4.0.0
 
-
-
-
-0.1.37
-   Add Carousel component
 
 0.1.36
    Add SASS
+
 
 0.1.35
    Remove webpack.mix.js (deprecated)

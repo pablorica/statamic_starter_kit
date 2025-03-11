@@ -82,7 +82,7 @@ yarn-error.log
 *.scssc
 *.codekit
 *.sh
-*.lock 
+*.lock
 phpcs.xml
 *.sass-cache
 
@@ -96,7 +96,7 @@ phpcs.xml
 *.rej
 
 # Ignore potentially dangerous files (dependabot alerts)
-yarn.lock 
+yarn.lock
 
 # Custom files
 composer.phar
@@ -109,7 +109,7 @@ public/1n7h0.php
 # ignore users directories
 /users
 
-# ignore content 
+# ignore content
 #/content
 
 # Ignore public files
@@ -140,7 +140,7 @@ resources/views/vendor/livewire/
 !.browserslist
 !README.md
 !CHANGELOG.md
-# -- sometimes these files won't be ignored becuse 
+# -- sometimes these files won't be ignored becuse
 # -- they are needed for DO app
 # !package-lock.json
 # !composer.lock

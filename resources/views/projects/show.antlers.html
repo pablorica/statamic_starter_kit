@@ -35,13 +35,13 @@
 {{ project_location =  '' }}
 
 {{ if sectors }}
-    {{ sectors }}  
+    {{ sectors }}
         {{ project_sector =  title }}
     {{ /sectors }}
 {{ endif }}
 
 {{ if locations }}
-    {{ locations }}  
+    {{ locations }}
         {{ project_location =  title }}
     {{ /locations }}
 {{ endif }}
@@ -53,33 +53,33 @@
 {{# color-item-lightblue color-item-blue color-item-darkblue color-item-pink color-item-yellow color-item-orange color-item-orange color-item-green #}}
 
 <main id="content"
-    class="outer-grid" 
+    class="outer-grid"
     x-data
 >
 
     <header class="fluid-container grid md:grid-cols-12 gap-4 w-full p-0">
         {{  partial:components/image
-            :image="image" 
+            :image="image"
             figure_class="w-full max-w-none md:col-span-12 p-0 h-screen "
-            ratio="3/2" 
+            ratio="3/2"
         }}
     </header>
-    
-    <section id="metaInfo" 
+
+    <section id="metaInfo"
         class="fluid-container pt-8 pb-8 grid gap-4 md:grid-cols-12"
     >
-    
+
         <div id="location"
             class="
             max-w-none
             md:col-span-3 grid items-end
         ">
-            {{ partial:typography/h3 
-                content="LOCATION" 
+            {{ partial:typography/h3
+                content="LOCATION"
             }}
-            {{ partial:typography/p 
-                :content="project_location" 
-                class="block h5 mt-1" 
+            {{ partial:typography/p
+                :content="project_location"
+                class="block h5 mt-1"
             }}
         </div>
 
@@ -88,12 +88,12 @@
             max-w-none
             md:col-span-3 grid items-end
         ">
-            {{ partial:typography/h3 
-                content="SECTOR" 
+            {{ partial:typography/h3
+                content="SECTOR"
             }}
-            {{ partial:typography/p 
-                :content="project_sector" 
-                class="block h5 mt-1" 
+            {{ partial:typography/p
+                :content="project_sector"
+                class="block h5 mt-1"
             }}
         </div>
 
@@ -102,12 +102,12 @@
             max-w-none
             md:col-span-3 grid items-end
         ">
-            {{ partial:typography/h3 
-                content="CLIENT" 
+            {{ partial:typography/h3
+                content="CLIENT"
             }}
-            {{ partial:typography/p 
-                :content="client" 
-                class="block h5 mt-1" 
+            {{ partial:typography/p
+                :content="client"
+                class="block h5 mt-1"
             }}
         </div>
 
@@ -116,12 +116,12 @@
             max-w-none
             md:col-span-3 grid items-end
         ">
-            {{ partial:typography/h3 
-                content="DATE" 
+            {{ partial:typography/h3
+                content="DATE"
             }}
-            {{ partial:typography/p 
-                :content="project_date" 
-                class="block h5 mt-1" 
+            {{ partial:typography/p
+                :content="project_date"
+                class="block h5 mt-1"
             }}
         </div>
     </section>
@@ -132,9 +132,9 @@
             max-w-none
             md:col-span-9
         ">
-            {{ partial:typography/h1 
-                :content="title" 
-                class="text-left" 
+            {{ partial:typography/h1
+                :content="title"
+                class="text-left"
             }}
         </div>
     </section>
@@ -145,49 +145,49 @@
     {{ /page_builder }}
 
     {{ if bottom_entry }}
-        <section id="" 
+        <section id=""
             x-data="{ shown_related: false, load_section: true }"
-            x-intersect.once="shown_related = true;" 
-            class="fluid-container pt-8 pb-8 grid gap-4 md:grid-cols-12 md:gap-0 md:pt-0 md:pb-0 md:pl-0 md:pr-0 text-black bg-white opacity-0 animate-appearsin" 
+            x-intersect.once="shown_related = true;"
+            class="fluid-container pt-8 pb-8 grid gap-4 md:grid-cols-12 md:gap-0 md:pt-0 md:pb-0 md:pl-0 md:pr-0 text-black bg-white opacity-0 animate-appearsin"
             :class="shown_related && load_section ? 'animate-appearsin' : ''"
         >
             <div class="
                 max-w-none
                 md:col-span-12
             ">
-                {{ partial:components/related_entry 
-                    :entrycard_id="bottom_entry.id" 
+                {{ partial:components/related_entry
+                    :entrycard_id="bottom_entry.id"
                 }}
             </div>
         </section>
-    {{ else }}
-        {{ collection:previous 
-            in="projects" 
-            sort="date:asc" 
-            limit="1" 
-            as="items" 
+    {{#  else }}
+        {{# collection:previous
+            in="projects"
+            sort="date:asc"
+            limit="1"
+            as="items"
         }}
-            {{ unless no_results }}
-            <section id="" 
+            {{# unless no_results }}
+            <section id=""
                 x-data="{ shown_related: false, load_section: true }"
-                x-intersect.once="shown_related = true;" 
-                class="fluid-container pt-8 pb-8 grid gap-4 md:grid-cols-12 md:gap-0 md:pt-0 md:pb-0 md:pl-0 md:pr-0 text-black bg-white opacity-0 animate-appearsin" 
+                x-intersect.once="shown_related = true;"
+                class="fluid-container pt-8 pb-8 grid gap-4 md:grid-cols-12 md:gap-0 md:pt-0 md:pb-0 md:pl-0 md:pr-0 text-black bg-white opacity-0 animate-appearsin"
                 :class="shown_related && load_section ? 'animate-appearsin' : ''"
             >
-                {{ items }}
+                {{# items }}
 
                     <div class="
                         max-w-none
                         md:col-span-12
                     ">
-                        {{ partial:components/related_entry 
-                            :entrycard_id="id" 
+                        {{# partial:components/related_entry
+                            :entrycard_id="id"
                         }}
                     </div>
-                {{ /items }}
+                {{# /items }}
             </section>
-            {{ /unless }}
-        {{ /collection:previous }}
+            {{# /unless }}
+        {{# /collection:previous  #}}
     {{ endif }}
 </main>
 <!-- /projects/show.antlers.html -->

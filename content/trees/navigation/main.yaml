@@ -3,14 +3,6 @@ tree:
     id: ae84904c-b9ed-4ee3-bbc3-ae5c00feab7c
     entry: home
   -
-    id: 12cdd01b-eac0-44cd-b172-8ef3544d4c90
-    entry: b678f338-de35-4f06-9b0a-7959a95d705d
-  -
-    id: af63eb23-28df-4522-9017-9de90610f56e
-    entry: 47c4bf06-db3e-4646-b602-f62561c9c5bc
-  -
-    id: 5fdff4da-3a0f-4973-a7d4-1e193e1f996e
-    entry: d11a5ec8-9915-4528-8cfe-e282362ef9ee
-  -
-    id: 220005c6-872f-4f9c-8a3f-174685428903
-    entry: dd1b035d-6de2-4dff-9fb0-a74f0cc2a080
+    id: 1ea53796-084b-4791-9b5f-19a0e2f420e4
+    title: Projects
+    url: /projects

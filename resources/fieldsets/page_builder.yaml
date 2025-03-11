@@ -9,6 +9,7 @@ fields:
       collapse: true
       listable: false
       display: 'Page builder'
+      button_label: 'Add block'
       sets:
         row:
           display: Rows
@@ -34,34 +35,13 @@ fields:
               fields:
                 -
                   import: form
-            index_content:
-              display: 'Index content'
-              instructions: 'Render the currently mounted entries if available.'
-              icon: null
-              fields:
-                -
-                  import: index_content
-            link_blocks:
-              display: 'Link blocks'
-              instructions: 'Show linkable blocks with text.'
+            cards:
+              display: Cards
+              instructions: 'Show linkable cards with text.'
               icon: link
               fields:
                 -
-                  import: link_blocks
-            news:
-              display: News
-              instructions: 'List the most recent News.'
-              icon: null
-              fields:
-                -
-                  import: news
-            projects:
-              display: Projects
-              instructions: 'List the most recent Projects.'
-              icon: null
-              fields:
-                -
-                  import: projects
+                  import: cards
         text:
           display: Text
           instructions: 'Text based blocks.'
@@ -74,8 +54,3 @@ fields:
               fields:
                 -
                   import: article
-      instructions_position: above
-      visibility: visible
-      previews: true
-      fullscreen: true
-      replicator_preview: true

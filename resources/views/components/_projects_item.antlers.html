@@ -8,11 +8,12 @@
 <article class="flex flex-col {{ class }}">
 
     {{  partial:components/image
-        :image="image" 
+        :image="image"
         figure_class="mb-4"
-        ratio="3/2" 
+        :image_link=url
+        ratio="3/2"
         sizes="(min-width: 1280px) 430px, (min-width: 768px) 30vw, 90vw"
-        lazy="true" 
+        lazy="true"
         cover="true"
     }}
 

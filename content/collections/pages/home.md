@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: Home
-updated_by: ead679e8-22dd-4ff4-abcb-8bd330197ea7
-updated_at: 1715900389
+updated_by: b2942213-49d1-4a14-b79d-5a06f75a8862
+updated_at: 1741692893
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -11,203 +11,258 @@ sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 page_builder:
   -
-    id: lw9avyj7
-    top_border: false
+    id: m845sb95
     columns:
       -
-        id: llezva0h
-        size: 12
-        set_horizontal_position: false
-        set_span_rows: false
-        vertical_alignment: top
+        id: m845sczh
         column_article:
           -
             type: heading
             attrs:
-              textAlign: center
-              level: 2
+              textAlign: left
+              level: 1
             content:
               -
                 type: text
-                text: 'Welcome to Statamic starter kit'
+                text: 'Welcome to Statamic 5!'
+          -
+            type: paragraph
+            attrs:
+              textAlign: left
+            content:
+              -
+                type: text
+                text: 'This is '
+              -
+                type: text
+                marks:
+                  -
+                    type: textColor
+                    attrs:
+                      color: '#65B2E8'
+                text: some
+              -
+                type: text
+                text: ' '
+              -
+                type: text
+                marks:
+                  -
+                    type: textColor
+                    attrs:
+                      color: '#FF6B00'
+                text: coloured
+              -
+                type: text
+                text: ' '
+              -
+                type: text
+                marks:
+                  -
+                    type: textColor
+                    attrs:
+                      color: '#00AC69'
+                text: text
+        size: 12
+        set_horizontal_position: false
+        set_span_rows: false
+        vertical_alignment: top
         top_padding: -1
         right_padding: -1
         bottom_padding: -1
         left_padding: -1
-        type: new_column
-        enabled: true
         size_mobile: 6
         mobile_top_padding: -1
         mobile_right_padding: -1
         mobile_bottom_padding: -1
         mobile_left_padding: -1
         tablet_size: 12
+        type: new_column
+        enabled: true
         horizontal_position: 0
         span_rows: 0
         mobile_horizontal_position: 0
         tablet_horizontal_position: 0
+    background_colour_type: custom
+    background_colour: white
+    text_colour_type: custom
+    text_colour: black
+    section_over_floating_logo: false
+    loading_effect: true
+    top_border: false
+    remove_columns_gap: false
+    screen_minimum_height: false
+    display_scrolldown_button: false
+    section_collapsable: false
+    top_padding: -1
+    right_padding: -1
+    bottom_padding: -1
+    left_padding: -1
+    type: section
+    enabled: true
+  -
+    id: m8457dx2
+    columns:
       -
-        id: lnt8oxap
-        size: 12
-        set_horizontal_position: false
-        set_span_rows: false
-        vertical_alignment: top
+        id: m8457ty9
         column_article:
           -
             type: set
             attrs:
-              id: lw9awccd
+              id: m84583n9
               values:
                 type: carousel
                 carousel:
                   -
-                    id: lw9awdfy
-                    image: ceramiche-refin-affrescati-tiles-promotion_dezeen_2364_col_2.jpg
-                    caption: 'Caption 1'
+                    id: m847iyrw
+                    image: image05.jpg
+                    caption: 'Image 05 Caption'
                     type: slide
                     enabled: true
                   -
-                    id: lw9awlrd
-                    image: ceramiche-refin-affrescati-tiles-promotion_dezeen_2364_col_4.jpg
-                    caption: 'Caption 2'
+                    id: m847jfmj
+                    image: image06.jpg
+                    caption: 'Image 06 Caption'
                     type: slide
                     enabled: true
                   -
-                    id: lw9awyh8
-                    image: ceramiche-refin-affrescati-tiles-promotion_dezeen_2364_col_5.jpg
-                    caption: 'Caption 3'
+                    id: m847jmmi
+                    image: image07.jpg
+                    caption: 'Image 07 Caption'
                     type: slide
                     enabled: true
                 navigation_arrows: true
-                indicator_buttons: true
-                full_size: true
-                navigation: true
-                autoplay: true
-                transition: gallery
-        top_padding: -1
-        right_padding: -1
-        bottom_padding: -1
-        left_padding: -1
-        type: new_column
-        enabled: true
-        size_mobile: 6
-        mobile_top_padding: -1
-        mobile_right_padding: -1
-        mobile_bottom_padding: -1
-        mobile_left_padding: -1
-        tablet_size: 12
-        horizontal_position: 0
-        span_rows: 0
-        mobile_horizontal_position: 0
-        tablet_horizontal_position: 0
-    top_padding: -1
-    right_padding: -1
-    bottom_padding: -1
-    left_padding: -1
-    type: section
-    enabled: true
-    background_colour: grey
-    test_colour: '#000000'
-    text_colour: white
-    screen_minimum_height: true
-    remove_columns_gap: true
-    loading_effect: false
-    display_scrolldown_button: true
-    slug: welcome
-    background_colour_type: custom
-    text_colour_type: custom
-    section_over_floating_logo: false
-    section_collapsable: false
-    scroll_down_button_link: '#project'
-  -
-    id: llezv5at
-    top_border: false
-    columns:
-      -
-        id: llezva0h
+                navigation: false
+                full_size: false
+                autoplay: false
+                transition: carousel
         size: 12
         set_horizontal_position: false
         set_span_rows: false
         vertical_alignment: top
-        column_article:
-          -
-            type: heading
-            attrs:
-              textAlign: center
-              level: 2
-            content:
-              -
-                type: text
-                text: 'Link to Project'
         top_padding: -1
         right_padding: -1
         bottom_padding: -1
         left_padding: -1
-        type: new_column
-        enabled: true
         size_mobile: 6
         mobile_top_padding: -1
         mobile_right_padding: -1
         mobile_bottom_padding: -1
         mobile_left_padding: -1
         tablet_size: 12
+        type: new_column
+        enabled: true
         horizontal_position: 0
         span_rows: 0
         mobile_horizontal_position: 0
         tablet_horizontal_position: 0
-      -
-        id: lnt8oxap
-        size: 6
-        set_horizontal_position: true
-        set_span_rows: false
-        vertical_alignment: top
-        column_article:
-          -
-            type: set
-            attrs:
-              id: lnt8p2jh
-              values:
-                type: image
-                size: md
-                image: a-peak.jpg
-                orientation: default
-        top_padding: -1
-        right_padding: -1
-        bottom_padding: -1
-        left_padding: -1
-        type: new_column
-        enabled: true
-        horizontal_position: 4
-        size_mobile: 6
-        mobile_top_padding: -1
-        mobile_right_padding: -1
-        mobile_bottom_padding: -1
-        mobile_left_padding: -1
-        mobile_horizontal_position: 0
-        tablet_size: 12
-        tablet_horizontal_position: 0
-        span_rows: 0
+    background_colour_type: custom
+    background_colour: white
+    text_colour_type: custom
+    text_colour: black
+    section_over_floating_logo: false
+    loading_effect: true
+    top_border: false
+    remove_columns_gap: false
+    screen_minimum_height: false
+    display_scrolldown_button: false
+    section_collapsable: false
     top_padding: -1
     right_padding: -1
     bottom_padding: -1
     left_padding: -1
     type: section
     enabled: true
-    test_colour: '#000000'
-    screen_minimum_height: true
-    remove_columns_gap: false
-    section_link: 'entry::02f15411-e870-4786-8c33-188b591625a8'
-    loading_effect: false
-    display_scrolldown_button: false
-    slug: project
+  -
+    id: m84acvnn
+    columns:
+      -
+        id: m84acxqd
+        column_article:
+          -
+            type: set
+            attrs:
+              id: m84ad14n
+              values:
+                type: video
+                video_type: embed
+                video_url: 'https://www.youtube.com/watch?v=0Nq20u0YzoI'
+                ratio_width: 16
+                ratio_height: 9
+                video_autoplay: true
+                video_loop: true
+                show_mute_button: true
+        size: 6
+        set_horizontal_position: false
+        set_span_rows: false
+        vertical_alignment: top
+        top_padding: -1
+        right_padding: -1
+        bottom_padding: -1
+        left_padding: -1
+        size_mobile: 6
+        mobile_top_padding: -1
+        mobile_right_padding: -1
+        mobile_bottom_padding: -1
+        mobile_left_padding: -1
+        tablet_size: 12
+        type: new_column
+        enabled: true
+        horizontal_position: 0
+        span_rows: 0
+        mobile_horizontal_position: 0
+        tablet_horizontal_position: 0
+      -
+        id: m84ae52w
+        column_article:
+          -
+            type: set
+            attrs:
+              id: m84ad14n
+              values:
+                type: video
+                video_type: embed
+                video_url: 'https://www.vimeo.com/140088872'
+                ratio_width: 16
+                ratio_height: 9
+                video_autoplay: true
+                video_loop: true
+                show_mute_button: true
+        size: 6
+        set_horizontal_position: false
+        set_span_rows: false
+        vertical_alignment: top
+        top_padding: -1
+        right_padding: -1
+        bottom_padding: -1
+        left_padding: -1
+        size_mobile: 6
+        mobile_top_padding: -1
+        mobile_right_padding: -1
+        mobile_bottom_padding: -1
+        mobile_left_padding: -1
+        tablet_size: 12
+        type: new_column
+        enabled: true
+        horizontal_position: 0
+        span_rows: 0
+        mobile_horizontal_position: 0
+        tablet_horizontal_position: 0
     background_colour_type: custom
-    text_colour_type: custom
-    section_over_floating_logo: false
-    section_collapsable: false
     background_colour: white
+    text_colour_type: custom
     text_colour: black
-display_scrolldown_button: true
-hide_title: true
-hide_footer: false
-hide_up_button: true
+    section_over_floating_logo: false
+    loading_effect: true
+    top_border: false
+    remove_columns_gap: false
+    screen_minimum_height: false
+    display_scrolldown_button: false
+    section_collapsable: false
+    top_padding: -1
+    right_padding: -1
+    bottom_padding: -1
+    left_padding: -1
+    type: section
+    enabled: true
 ---

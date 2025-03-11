@@ -7,7 +7,7 @@
     @param img_id           id of the image
     @param image_link       url of the link
     @param img_class        additional iamge classes
-    @param ratio            default| 3/2 | 4/3 | 16/9 | 8/9  Pass in an aspect ratio to crop the image in a certain way. `16/9` for example or specify a second ratio for larger screens: `1/1 large:1/2`.  
+    @param ratio            default| 3/2 | 4/3 | 16/9 | 8/9  Pass in an aspect ratio to crop the image in a certain way. `16/9` for example or specify a second ratio for larger screens: `1/1 large:1/2`.
     @param srcset_from The path to a partial with an alternative srcset definition array. Something like `snippets/srcset_full_width` for example.
     @set page.article.image
 #}}
@@ -19,8 +19,8 @@
 {{ fig_class            = figure_class }}
 
 {{ image_ratio = ''}}
-{{ if ratio 
-    && ratio  != 'default' 
+{{ if ratio
+    && ratio  != 'default'
 }}
     {{# aspect-[3/2] aspect-[4/3] aspect-[16/9] aspect-[8/9] #}}
     {{ fig_class            .= ' aspect-[' +ratio+ '] relative' }}
@@ -28,58 +28,48 @@
     {{ image_original_class .= ' absolute object-cover w-full h-full object-center' }}
     {{ image_ratio           = ratio.value }}
 {{ /if }}
-<figure 
-    id="{{ img_id }}"       
+
+<figure
+    id="{{ img_id }}"
     class="{{ fig_class }}
         {{ switch(
             (size == 'md') => 'size-md',
             (size == 'lg') => 'size-lg',
             (size == 'xl') => 'size-xl',
-            () => ''
+            () => 'col-span-full'
         )}}
     "
 >
-
 {{ if image_link }}
         <a href="{{ image_link }}">
 {{ /if }}
-        {{# --> We can select between two diferent files to load as partial (if required)
-            partial
-                src="{ size == 'full' ? 'components/picture': 'statamic-peak-tools::components/picture' }"
-        #}}
-        {{ image_class = img_class}}
-        
 
-        {{ if glide_active:glide_enabled }}
+{{ image_class = img_class}}
 
-            {{# 
-                Partial image included in
-                vendor/studio1902/statamic-peak-tools/resources/views/components/_picture.antlers.html
-                
-                We can select between two diferent files to load as partial (if required)
-                partial
-                    src="{ size == 'full' ? 'components/picture': 'statamic-peak-tools::components/picture' }"
-            #}}
+
+        {{ if glide:enabled }}
 
             {{ image_class .= image_glide_class }}
 
-            {{ partial:statamic-peak-tools::components/picture
-                    :image="image"
-                    :class="image_class"
-                    :aspect_ratio="image_ratio"
-                    cover="true"
-                    lazy="true"
-                    sizes="
-                        {{ switch(
-                            (size == 'md') => '90vw, (min-width: 768px) 50vw, (min-width: 1280px) 640px',
-                            (size == 'lg') => '90vw, (min-width: 768px) 75vw, (min-width: 1280px) 960px',
-                            (size == 'xl') => '90vw, (min-width: 1280px) 1150px',
-                            () => '100vw'
-                        )}}
-                    "
-                    srcset_from="snippets/srcset_full_width"
-                    quality="{ size == 'full' ? '100': '85' }"
-                    
+            {{# srcset_from="snippets/srcset_full_width" #}}
+
+            {{
+                partial:statamic-peak-tools::components/picture
+                :image="image"
+                :class="image_class"
+                :aspect_ratio="image_ratio"
+                cover="false"
+                lazy="true"
+                sizes="
+                    {{ switch(
+                        (size == 'md') => '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw',
+                        (size == 'lg') => '(min-width: 1280px) 960px, (min-width: 768px) 75vw, 90vw',
+                        (size == 'xl') => '(min-width: 1280px) 1150px, 90vw',
+                        () => '100vw'
+                    )}}
+                "
+
+                quality="{ size == 'full' ? '100': '85' }"
             }}
 
         {{ else }}
@@ -97,15 +87,13 @@
                     {{ /unless }}
                     loading="lazy"
                 />
-            {{ /asset }}    
+            {{ /asset }}
         {{ /if }}
-            
 
-        {{ partial:typography/caption as="figcaption" }}
-    
+    {{ partial:typography/caption as="figcaption" }}
+
 {{ if image_link }}
     </a>
 {{ /if }}
-
 </figure>
 <!-- End: /components/_image.antlers.html -->

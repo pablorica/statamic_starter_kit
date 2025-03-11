@@ -33,30 +33,14 @@ editor:
     - 'delete social_images assets'
     - 'view contact form submissions'
     - 'delete contact form submissions'
-    - 'view news entries'
-    - 'edit news entries'
-    - 'create news entries'
-    - 'delete news entries'
-    - 'publish news entries'
-    - 'reorder news entries'
-    - 'edit other authors news entries'
-    - 'publish other authors news entries'
-    - 'delete other authors news entries'
-    - 'view projects entries'
-    - 'edit projects entries'
-    - 'create projects entries'
-    - 'delete projects entries'
-    - 'publish projects entries'
-    - 'reorder projects entries'
-    - 'edit other authors projects entries'
-    - 'publish other authors projects entries'
-    - 'delete other authors projects entries'
+    - 'access default site'
 marketeer:
   title: Marketeer
   permissions:
     - 'access cp'
     - 'edit redirects globals'
     - 'edit seo globals'
+    - 'access default site'
 user_management:
   title: 'User management'
   permissions:
@@ -68,3 +52,10 @@ user_management:
     - 'change passwords'
     - 'assign roles'
     - 'assign user groups'
+    - 'access default site'
+form_editor:
+  title: 'Form editor'
+  permissions:
+    - 'configure form fields'
+    - 'configure forms'
+    - 'access default site'
