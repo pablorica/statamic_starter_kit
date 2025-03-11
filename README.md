@@ -347,13 +347,13 @@ Reference to [Statamic Cache](https://statamic.dev/static-caching#by-force)
 
 ```env
 Dump your .env values here with sensitive data removed. The following is a production example that uses full static caching:
-APP_NAME="10 Design"
+APP_NAME="Statamic Starter Kit"
 APP_ENV=local
 APP_KEY="base64:NOmJ6oP6y2BQ6Pf93ObOHMC0B/Tfws+m6oYAFNTX6Kc="
 APP_DEBUG=true
 DEBUGBAR_ENABLED=true
 APP_TIMEZONE="Europe/London"
-APP_URL="http://10sb.localhost"
+APP_URL="http://statamic.test.localhost"
 
 APP_LOCALE=en
 APP_FALLBACK_LOCALE=en
@@ -603,29 +603,6 @@ You can use the `{{ instagram:feed }}` tag to fetch media from the API and retur
 
 ---
 
-## NGINX config
-
-If you have a NGINX server, use these instructions for the configuration file
-
-Add the following to your NGINX config __inside the server block__ to enable static resource caching:
-```
-expires $expires;
-```
-
-And this __outside the server block__:
-```
-map $sent_http_content_type $expires {
-	default off;
-	text/css max;
-	~image/ max;
-	application/javascript max;
-	application/octet-stream max;
-
-}
-```
-
----
-
 ## Updating Statamic
 
 [UPDATING.md](https://github.com/pablorica/statamic_starter_kit/blob/main/UPDATING.md)
@@ -633,11 +610,11 @@ map $sent_http_content_type $expires {
 
 ## Acknowledgements
 
-* [Statamic Starter Kit](https://github.com/pablorica/statamic_starter_kit)
+* [Statamic Peak](https://statamic.com/starter-kits/studio1902/peak) 
 
 ## Copyright and License
 
-Copyright 2025 10Design website released under the [MIT](https://github.com/pablorica/statamic_starter_kit/blob/main/LICENSE) license.
+Copyright 2025 **Statamic Starter Kit** released under the [MIT](https://github.com/pablorica/statamic_starter_kit/blob/main/LICENSE) license.
 
 ## Versioning
 
