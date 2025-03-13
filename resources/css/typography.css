@@ -1,5 +1,19 @@
 @plugin "@tailwindcss/typography";
 
+@layer base {
+    @font-face {
+        font-family: 'Futura Now Text';
+        src: url('/resources/fonts/FuturaNowText/FuturaNowText.eot');
+        src: url('/resources/fonts/FuturaNowText/FuturaNowText.eot?#iefix') format('embedded-opentype'),
+            url('/resources/fonts/FuturaNowText/FuturaNowText.woff2') format('woff2'),
+            url('/resources/fonts/FuturaNowText/FuturaNowText.woff') format('woff'),
+            url('/resources/fonts/FuturaNowText/FuturaNowText.svg#FuturaNowText-Rg') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
 @utility prose {
     --tw-prose-body: var(--color-neutral);
     --tw-prose-headings: var(--color-neutral);

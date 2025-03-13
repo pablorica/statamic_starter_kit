@@ -7,9 +7,9 @@ export default {
               ':root': {
                   // Fluid typography from 1 rem to 1.2 rem with fallback to 20px.
                   fontSize: '20px',
-                  letterSpacing: '-0.2px',
-                  lineHeight: '1.2',
-                  fontWeight: '450',
+                  letterSpacing: '-0.4px',
+                  lineHeight: '1.125',
+                  fontWeight: '400',
 
                   // Safari resize fix.
                   minHeight: '0vw',
