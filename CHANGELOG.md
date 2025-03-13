@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [0.3.6] - 2025-03-13
+
+### Added
+
+- Fonts
+- SCSS to Vite specifications
+
+
+
 ## [0.3.5] - 2025-03-11
 
 ### Added
