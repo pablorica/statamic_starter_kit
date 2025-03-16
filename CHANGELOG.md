@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+
 ## [0.3.7] - 2025-03-16
 
 ### Added
@@ -15,25 +16,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.3.6] - 2025-03-13
 
-### Updated
-
- - [Hero Carousel](https://app.asana.com/1/355454733208534/project/1209642401632940/task/1209642401632970)
-
-
 ### Added
 
- - [Fuentes y colores](https://app.asana.com/1/355454733208534/project/1209642401632940/task/1209642401632955/)
+- Fonts
+- SCSS to Vite specifications
+
 
 
 ## [0.3.5] - 2025-03-11
 
 ### Added
 
-- Logo
 - `Bard Text Color` add-on
 
-
 ## [0.3.4] - 2025-03-11
+
 
 ### Updated
 
