@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [0.3.8] - 2025-03-16
+
+### Added
+
+- Separator
+
+
 ## [0.3.7] - 2025-03-16
 
 ### Added
