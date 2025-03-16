@@ -1,0 +1,320 @@
+title: Footer
+data:
+  slug: footer
+  columns:
+    -
+      id: m8b9djuc
+      column_article:
+        -
+          type: paragraph
+          attrs:
+            textAlign: left
+          content:
+            -
+              type: text
+              text: MENU
+        -
+          type: set
+          attrs:
+            id: m8ba5w12
+            values:
+              type: separator
+              height: 150
+              desktop_height: 250
+              mobile_height: 50
+      size: 7
+      set_horizontal_position: true
+      horizontal_position: 2
+      set_span_rows: false
+      vertical_alignment: top
+      top_padding: -1
+      right_padding: -1
+      bottom_padding: -1
+      left_padding: -1
+      size_mobile: 6
+      mobile_top_padding: -1
+      mobile_right_padding: -1
+      mobile_bottom_padding: -1
+      mobile_left_padding: -1
+      mobile_horizontal_position: 0
+      tablet_size: 12
+      tablet_horizontal_position: 0
+      type: new_column
+      enabled: true
+      span_rows: 0
+    -
+      id: m8b9gczc
+      column_article:
+        -
+          type: set
+          attrs:
+            id: m8bajfbp
+            values:
+              type: separator
+              desktop_height: 100
+              mobile_height: 30
+        -
+          type: paragraph
+          attrs:
+            textAlign: left
+          content:
+            -
+              type: text
+              text: '[Contact Form]'
+        -
+          type: set
+          attrs:
+            id: m8bajqh6
+            values:
+              type: separator
+              desktop_height: 100
+              mobile_height: 30
+      size: 4
+      set_horizontal_position: false
+      set_span_rows: false
+      vertical_alignment: top
+      top_padding: -1
+      right_padding: -1
+      bottom_padding: -1
+      left_padding: -1
+      size_mobile: 6
+      mobile_top_padding: -1
+      mobile_right_padding: -1
+      mobile_bottom_padding: -1
+      mobile_left_padding: -1
+      tablet_size: 12
+      type: new_column
+      enabled: true
+      horizontal_position: 0
+      span_rows: 0
+      mobile_horizontal_position: 0
+      tablet_horizontal_position: 0
+    -
+      id: m8b9bq7a
+      column_article:
+        -
+          type: paragraph
+          attrs:
+            textAlign: left
+          content:
+            -
+              type: text
+              text: LOGO
+      size: 1
+      set_horizontal_position: false
+      set_span_rows: false
+      vertical_alignment: bottom
+      top_padding: -1
+      right_padding: -1
+      bottom_padding: -1
+      left_padding: -1
+      size_mobile: 6
+      mobile_top_padding: -1
+      mobile_right_padding: -1
+      mobile_bottom_padding: -1
+      mobile_left_padding: -1
+      tablet_size: 12
+      type: new_column
+      enabled: true
+      horizontal_position: 0
+      span_rows: 0
+      mobile_horizontal_position: 0
+      tablet_horizontal_position: 0
+    -
+      id: m8b9ojlb
+      column_article:
+        -
+          type: paragraph
+          attrs:
+            textAlign: left
+          content:
+            -
+              type: text
+              text: 'Follow Us'
+        -
+          type: paragraph
+          attrs:
+            textAlign: left
+          content:
+            -
+              type: text
+              text: Instagram
+            -
+              type: hardBreak
+            -
+              type: text
+              text: Facebook
+            -
+              type: hardBreak
+            -
+              type: text
+              text: LinkedIn
+            -
+              type: hardBreak
+            -
+              type: text
+              text: WeChat
+            -
+              type: hardBreak
+            -
+              type: text
+              text: x
+      size: 7
+      set_horizontal_position: false
+      set_span_rows: false
+      vertical_alignment: top
+      top_padding: -1
+      right_padding: -1
+      bottom_padding: -1
+      left_padding: -1
+      size_mobile: 6
+      mobile_top_padding: -1
+      mobile_right_padding: -1
+      mobile_bottom_padding: -1
+      mobile_left_padding: -1
+      tablet_size: 12
+      type: new_column
+      enabled: true
+      horizontal_position: 0
+      span_rows: 0
+      mobile_horizontal_position: 0
+      tablet_horizontal_position: 0
+    -
+      id: m8b9iod4
+      column_article:
+        -
+          type: paragraph
+          attrs:
+            textAlign: left
+          content:
+            -
+              type: text
+              text: 'Design TM'
+      size: 1
+      set_horizontal_position: false
+      set_span_rows: false
+      vertical_alignment: bottom
+      top_padding: -1
+      right_padding: -1
+      bottom_padding: -1
+      left_padding: -1
+      size_mobile: 6
+      mobile_top_padding: -1
+      mobile_right_padding: -1
+      mobile_bottom_padding: -1
+      mobile_left_padding: -1
+      tablet_size: 12
+      type: new_column
+      enabled: true
+      horizontal_position: 0
+      span_rows: 0
+      mobile_horizontal_position: 0
+      tablet_horizontal_position: 0
+    -
+      id: m8b9jczo
+      column_article:
+        -
+          type: paragraph
+          attrs:
+            textAlign: left
+          content:
+            -
+              type: text
+              text: 'Privacy Policy'
+      size: 1
+      set_horizontal_position: false
+      set_span_rows: false
+      vertical_alignment: bottom
+      top_padding: -1
+      right_padding: -1
+      bottom_padding: -1
+      left_padding: -1
+      size_mobile: 6
+      mobile_top_padding: -1
+      mobile_right_padding: -1
+      mobile_bottom_padding: -1
+      mobile_left_padding: -1
+      tablet_size: 12
+      type: new_column
+      enabled: true
+      horizontal_position: 0
+      span_rows: 0
+      mobile_horizontal_position: 0
+      tablet_horizontal_position: 0
+    -
+      id: m8b9jnqu
+      column_article:
+        -
+          type: paragraph
+          attrs:
+            textAlign: left
+          content:
+            -
+              type: text
+              text: 'Cookies Policy'
+      size: 1
+      set_horizontal_position: false
+      set_span_rows: false
+      vertical_alignment: bottom
+      top_padding: -1
+      right_padding: -1
+      bottom_padding: -1
+      left_padding: -1
+      size_mobile: 6
+      mobile_top_padding: -1
+      mobile_right_padding: -1
+      mobile_bottom_padding: -1
+      mobile_left_padding: -1
+      tablet_size: 12
+      type: new_column
+      enabled: true
+      horizontal_position: 0
+      span_rows: 0
+      mobile_horizontal_position: 0
+      tablet_horizontal_position: 0
+    -
+      id: m8b9jwjp
+      column_article:
+        -
+          type: paragraph
+          attrs:
+            textAlign: left
+          content:
+            -
+              type: text
+              text: '© 10 Design 2025'
+      size: 1
+      set_horizontal_position: false
+      set_span_rows: false
+      vertical_alignment: bottom
+      top_padding: -1
+      right_padding: -1
+      bottom_padding: -1
+      left_padding: -1
+      size_mobile: 6
+      mobile_top_padding: -1
+      mobile_right_padding: -1
+      mobile_bottom_padding: -1
+      mobile_left_padding: -1
+      tablet_size: 12
+      type: new_column
+      enabled: true
+      horizontal_position: 0
+      span_rows: 0
+      mobile_horizontal_position: 0
+      tablet_horizontal_position: 0
+  background_colour_type: custom
+  background_colour: white
+  text_colour_type: custom
+  text_colour: black
+  section_over_floating_logo: false
+  loading_effect: true
+  top_border: false
+  remove_columns_gap: false
+  screen_minimum_height: false
+  display_scrolldown_button: false
+  section_collapsable: false
+  top_padding: -1
+  right_padding: -1
+  bottom_padding: -1
+  left_padding: -1
