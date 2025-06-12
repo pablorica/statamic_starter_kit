@@ -15,7 +15,7 @@ class IsYoutube extends Modifier
      * @return bool
      */
     public function index(
-        $value , 
+        $value ,
         $params
     ) {
         $is_youtube = false;
@@ -30,29 +30,28 @@ class IsYoutube extends Modifier
         //$param = array_get($params, 0)
         $param  = Arr::get($params, 0, null); // Replace array_get with Arr::get
         if ($param !== null) {
-            if( $param == 'id' 
+            if( $param == 'id'
                 && $is_youtube
             ) {
-                if(strpos($value, "shorts") !== false) {
-                    //https://www.youtube.com/shorts/E0SVJLHV4MY
-                    $youtubeid = explode('shorts/', $value);
-                    $youtubeid = $youtubeid[1];
-                    return $youtubeid;
-                }
 
-                $youtubeid = explode('v=', $value);
-                $youtubeid = $youtubeid[1];
-                $youtubeid = explode('?', $youtubeid);
-                $youtubeid = $youtubeid[0];
-                $youtubeid = explode('&', $youtubeid);
-                $youtubeid = $youtubeid[0];
+              $youtubeid = null;
 
-                return $youtubeid;
+              if (preg_match('/(?:v=|shorts\/)([a-zA-Z0-9_-]{11})/',$value, $matches)) {
+                $youtubeid =$matches[1];
+              }
+
+              if (preg_match('/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $value, $matches)) {
+                $youtubeid =$matches[1];
+              }
+
+              //Log::info("youtubeid: ". print_r($youtubeid,true));
+
+              return $youtubeid;
             }
         }
-        
 
-        
+
+
         return $is_youtube;
     }
 }

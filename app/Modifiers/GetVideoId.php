@@ -36,18 +36,16 @@ class GetVideoId extends Modifier
             }
 
             if( $is_youtube ) {
-                if(strpos($url, "shorts") !== false) {
-                    //https://www.youtube.com/shorts/E0SVJLHV4MY
-                    $youtubeid = explode('shorts/', $url);
-                    $youtubeid = $youtubeid[1];
-                    return $youtubeid;
+
+                $youtubeid = null;
+
+                if (preg_match('/(?:v=|shorts\/)([a-zA-Z0-9_-]{11})/', $url, $matches)) {
+                  $youtubeid =$matches[1];
                 }
-                $youtubeid = explode('v=', $url);
-                $youtubeid = $youtubeid[1];
-                $youtubeid = explode('?', $youtubeid);
-                $youtubeid = $youtubeid[0];
-                $youtubeid = explode('&', $youtubeid);
-                $youtubeid = $youtubeid[0];
+
+                if (preg_match('/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $url, $matches)) {
+                  $youtubeid =$matches[1];
+                }
 
                 //Log::info("youtubeid: ". print_r($youtubeid,true));
 

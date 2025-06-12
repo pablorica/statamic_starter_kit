@@ -3,7 +3,7 @@
 A Statamic starter kit based in [Statamic Peak](https://statamic.com/starter-kits/studio1902/peak) 
 
 
-[![version](https://img.shields.io/badge/version-0.3.8-blue.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.3.9-blue.svg)](https://semver.org)
 
 
 ## Installation instructions
