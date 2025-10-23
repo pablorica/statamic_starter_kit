@@ -6,3 +6,13 @@ tree:
     id: 1ea53796-084b-4791-9b5f-19a0e2f420e4
     title: Projects
     url: /projects
+  -
+    id: 13a2efb0-848d-428e-9d88-7f6c5632493c
+    title: Examples
+    children:
+      -
+        id: 63ae84c2-4245-443b-b416-d395c818bb99
+        entry: 392a2aa1-4aad-460a-a268-0db76f43e59a
+      -
+        id: 50b5a655-7688-443f-be9c-d1fb8bcdd185
+        entry: d0f5d3a0-8597-4291-a09f-85adde9758f6

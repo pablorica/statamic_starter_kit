@@ -60,7 +60,7 @@ data:
           content:
             -
               type: text
-              text: '[Contact Form]'
+              text: 'Footer message'
         -
           type: set
           attrs:
@@ -282,7 +282,7 @@ data:
           content:
             -
               type: text
-              text: '© 10 Design 2025'
+              text: '© TM-Studio 2025'
       size: 1
       set_horizontal_position: false
       set_span_rows: false
