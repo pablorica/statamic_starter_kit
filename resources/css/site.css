@@ -112,4 +112,10 @@
         /* font-family: var(--font-serif); */
         /* font-family: var(--font-mono); */
     }
+    /* Reveal section */
+    .reveal-section {
+      > * {
+          @apply opacity-0 animate-appearsin;
+      }
+    }
 }

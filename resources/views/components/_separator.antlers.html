@@ -4,6 +4,13 @@
 #}}
 
 <!-- /components/_separator.antlers.html -->
+{{ mobile_class = 'lg:hidden' }}
+{{ desktop_class = 'hidden lg:block' }}
+{{ if set_tablet_height && tablet_height }}
+  {{ mobile_class = 'md:hidden' }}
+  {{ desktop_class = 'hidden xl:block' }}
+{{ /if }}
+
 {{ if desktop_height }}
     {{ if !mobile_height }}
         {{  mobile_height = desktop_height }}
@@ -18,10 +25,16 @@
 {{ /if }}
 
 
-<div class="w-full md:hidden"
+<div class="w-full {{ mobile_class }}"
     style="height:{{ mobile_height }}px"
 ></div>
-<div class="w-full hidden md:block"
+{{ if set_tablet_height && tablet_height }}
+<div class="w-full hidden tablet-only:block"
+    style="height:{{ tablet_height }}px"
+></div>
+{{ /if }}
+<div class="w-full hidden {{ desktop_class }}"
     style="height:{{ desktop_height }}px"
 ></div>
+
 <!-- End: /components/_separator.antlers.html -->

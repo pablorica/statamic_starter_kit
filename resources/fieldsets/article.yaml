@@ -1,6 +1,12 @@
 title: Article
 fields:
   -
+    handle: article_slug
+    field:
+      type: text
+      display: 'Article Slug'
+      width: 33
+  -
     handle: article
     field:
       buttons:

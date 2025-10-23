@@ -316,13 +316,19 @@ fields:
       display: 'Background Image'
       width: 50
   -
+    handle: bg_image_mobile
+    field: common.image
+    config:
+      display: 'Background Image (Mobile)'
+      width: 50
+  -
     handle: bg_video_url
     field:
       placeholder: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
       type: video
       display: 'Background Video'
       instructions: 'YouTube or Vimeo URL.'
-      width: 50
+      width: 100
       listable: hidden
       instructions_position: above
       visibility: visible
@@ -405,6 +411,16 @@ fields:
       instructions_position: above
       visibility: visible
       hide_display: false
+      width: 33
+  -
+    handle: section_custom_classes
+    field:
+      type: text
+      display: 'Custom classes'
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      width: 66
   -
     handle: loading_effect
     field:
@@ -466,8 +482,7 @@ fields:
       input_type: text
       antlers: false
       type: text
-      display: 'scroll-down Button Link'
-      instructions: 'If empty, the page will scroll down the same height as the device screen'
+      display: 'Button Link / Anchor'
       width: 33
       listable: hidden
       instructions_position: above

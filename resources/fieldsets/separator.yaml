@@ -8,6 +8,7 @@ fields:
       display: 'Desktop Height'
       width: 50
       default: '100'
+      localizable: false
   -
     handle: mobile_height
     field:
@@ -16,3 +17,22 @@ fields:
       display: 'Mobile Height'
       width: 50
       default: '30'
+      localizable: false
+  -
+    handle: set_tablet_height
+    field:
+      type: toggle
+      display: 'Set Tablet height'
+      localizable: false
+      width: 50
+  -
+    handle: tablet_height
+    field:
+      append: px
+      type: integer
+      display: 'Tablet Height'
+      width: 50
+      default: '30'
+      localizable: false
+      if:
+        set_tablet_height: 'equals true'
