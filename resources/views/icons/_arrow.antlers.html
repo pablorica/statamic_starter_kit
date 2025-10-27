@@ -5,20 +5,30 @@
 
 <!-- /icons/_arrow.antlers.html -->
 
-<svg xmlns="http://www.w3.org/2000/svg" 
-    width="{{ svg_width }}" 
-    height="{{ svg_height }}" 
-    class="{{ svg_class }}" 
-    viewBox="0 0 62 62" 
-    fill="none"
+<svg width="{{ svg_width }}"
+  height="{{ svg_height }}"
+  viewBox="0 0 59 67"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  class="transition-all
+    float-right lg:mt-[15px]
+    mobile-only:hidden
+    {{ svg_class }}
+  "
 >
-    <circle class="{{circle_class}}" 
-        cx="31" 
-        cy="31" 
-        r="31"  
-    />
-    <path class="{{path_class}}" 
-        d="M31 45.6136L16.3865 31M16.3865 31L31 16.3865M16.3865 31L45.6135 31" 
-    />
+  <line x1="29.75" y1="66" x2="29.75" y2="-4.37114e-08" stroke="black"
+    class="transition-all {{stroke_class}}"/>
+  <path d="M58.5 37.25L29.75 66L0.999996 37.25"
+    class="transition-all {{stroke_class}}"/>
+</svg>
+<svg class="block md:hidden"
+  width="12"
+  height="11"
+  viewBox="0 0 12 11"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M1 5.00002L6.00002 10M11 5.00001L6.00002 10M6.00002 10L6 0.500019"
+    stroke="black"/>
 </svg>
 <!-- End /icons/_arrow.antlers.html -->

@@ -1,0 +1,102 @@
+title: 'Link with arrow'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: 'Link Title'
+      width: 50
+      localizable: false
+  -
+    handle: colour
+    field: common.colour
+    config:
+      display: 'Link Colour'
+      width: 25
+  -
+    handle: hover_colour
+    field: common.colour
+    config:
+      display: 'Hover Colour'
+      width: 25
+  -
+    handle: arrow_background
+    field: common.colour
+    config:
+      display: 'Arrow Background'
+      width: 33
+  -
+    handle: text_size
+    field:
+      options:
+        -
+          key: text-base
+          value: Paragraph
+        -
+          key: h1
+          value: H1
+        -
+          key: h2
+          value: H2
+        -
+          key: h3
+          value: H3
+        -
+          key: h4
+          value: H4
+        -
+          key: h5
+          value: H5
+      default: text-base
+      type: select
+      display: 'Text size'
+      width: 33
+      localizable: false
+  -
+    handle: target
+    field:
+      options:
+        _self: null
+        _parent: null
+        _top: null
+        _blank: null
+      default: _self
+      type: select
+      display: Target
+      width: 33
+      localizable: false
+  -
+    handle: tclass
+    field:
+      type: text
+      display: 'Tailwind Class'
+      width: 33
+      localizable: false
+  -
+    handle: show_on_hover
+    field:
+      mode: toggle
+      display: 'Show arrow on hover'
+      type: toggle
+      width: 33
+      localizable: false
+      instructions: 'If this is activated, the arrow will only be shown on hover, and that means this element is part of a navigation. Therefore the mobile version will be shown as a navigation element.'
+  -
+    handle: arrow_hover_direction
+    field:
+      options:
+        left: Left
+        right: Right
+      default: right
+      type: select
+      display: 'Arrow direction'
+      width: 33
+      if:
+        show_on_hover: 'equals true'
+      localizable: false
+  -
+    handle: link_url
+    field:
+      type: link
+      display: Link
+      localizable: false

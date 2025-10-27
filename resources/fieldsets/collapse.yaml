@@ -12,6 +12,20 @@ fields:
       instructions_position: above
       visibility: visible
       hide_display: false
+      width: 66
+  -
+    handle: collapse_slug
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Slug
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      width: 33
   -
     handle: collapse_colour
     field: common.colour
@@ -94,6 +108,24 @@ fields:
       instructions_position: above
       visibility: visible
       hide_display: false
+      sets:
+        link_with_arrow:
+          display: 'Link with arrow'
+          instructions: null
+          icon: arrow-right
+          fields:
+            - import: link_with_arrow
+        image:
+          display: Image
+          instructions: 'Add a single image with an optional caption.'
+          icon: media-image-picture-orientation
+          fields:
+            - import: image
+        separator:
+          display: Separator
+          icon: media-image-photo-focus-frame
+          fields:
+            - import: separator
   -
     handle: collapse_right_column
     field:
@@ -140,3 +172,21 @@ fields:
       instructions_position: above
       visibility: visible
       hide_display: false
+      sets:
+        link_with_arrow:
+          display: 'Link with arrow'
+          instructions: null
+          icon: arrow-right
+          fields:
+            - import: link_with_arrow
+        image:
+          display: Image
+          instructions: 'Add a single image with an optional caption.'
+          icon: media-image-picture-orientation
+          fields:
+            - import: image
+        separator:
+          display: Separator
+          icon: media-image-photo-focus-frame
+          fields:
+            - import: separator

@@ -1,0 +1,146 @@
+{{#
+    @name Link with arrow
+    @desc Link with arrow icon.
+    If show_on_hover is activated, the arrow will only be shown on hover ,and it means this element is part of a naviagtion. Therefore the mobile version will be shown as a navigation element.
+#}}
+
+<!-- /components/_link_with_arrow.antlers.html -->
+
+{{ title_class = '' }}
+
+{{ link_colour =  'white' }}
+{{ if colour }}
+    {{ link_colour =  colour }}
+{{ /if }}
+
+
+{{ stroke_class = 'stroke-black' }}
+
+{{ link_class = 'link-with-arrow
+  flex items-center
+  outline-none leading-none
+  gap-1 md:gap-3
+  ' + class + ' ' + tclass + '
+  group  transition-all duration-300
+  text-' + link_colour
+}}
+{{ svg_mobileclass = 'block' }}
+{{ svg_class       = 'inline rounded-full h-auto'}}
+{{ path_class      = 'transition-all duration-300' }}
+
+{{fill_class = ' fill-white'}}
+{{ if arrow_background }}
+    {{fill_class = ' fill-' + arrow_background }}
+{{ /if }}
+
+{{path_class .= fill_class }}
+
+{{ if hover_colour }}
+    {{link_class .= ' hover:text-' + hover_colour }}
+    {{path_class .= ' group-hover:fill-' + hover_colour }}
+{{ /if }}
+
+{{ svg_size = 'w-[30px] mt-1.5'}}
+
+{{ if text_size }}
+    {{ link_class .=  ' ' + text_size }}
+
+    {{ if text_size == 'h1' || text_size == 'h2'}}
+        {{ svg_size = 'w-[50px] md:w-[60px] mt-4' }}
+    {{ /if }}
+
+    {{ if text_size == 'h3' }}
+        {{ svg_size = 'w-[40px] md:w-[45px] mt-4' }}
+    {{ /if }}
+
+    {{ if text_size == 'h4' }}
+        {{ svg_size = 'w-[35px] ' }}
+        {{ link_class .= ' md:leading-[30px] md:tracking-tighter' }}
+        {{ title_class .= ' md:mt-[-8px]' }}
+    {{ /if }}
+
+    {{ if text_size == 'h5' }}
+        {{ svg_size = 'w-[15px] mt-1.5' }}
+    {{ /if }}
+{{ /if }}
+
+{{ svg_class .= ' ' + svg_size; }}
+
+{{ if show_on_hover }}
+    {{ link_class .= ' mobile-only:hidden' }}
+    {{ svg_class = 'absolute hidden
+        md:w-[10px] md:h-[10px]
+        group-hover:inline-block
+        top-1/2 transform -translate-y-1/2
+        transition-all duration-300' }}
+
+    {{ if arrow_hover_direction == 'left' }}
+        {{ svg_mobileclass .= ' rotate-90' }}
+        {{ svg_class .= ' -left-[14px] rotate-180 mt-[3px]' }}
+    {{ /if }}
+
+    {{ if arrow_hover_direction == 'right' }}
+        {{ svg_mobileclass .= ' rotate-270' }}
+        {{ svg_class .= ' -right-3 mt-[5px] translate-x-[2px]' }}
+    {{ /if }}
+{{ else }}
+  {{ link_class .= ' mobile-only:text-md mobile-only:p-0' }}
+{{ /if }}
+
+{{ if arrow_position }}
+    {{ if arrow_position == 'left' }}
+        {{ title_class .= ' order-1' }}
+        {{ svg_class .= ' transform rotate-180' }}
+    {{ /if }}
+{{ /if }}
+
+{{ svg_class .= ' mobile-only:w-[15px] mobile-only:h-[15px] mobile-only:mt-[7px] ' }}
+
+{{ if show_on_hover }}
+<a class="block
+  pt-[9px] pb-[12px]
+  border-t border-black
+  md:hidden"
+    href="{{ link_url }}"
+    target="{{ target }}"
+>
+  <div class="flex items-end md:items-center cursor-pointer group text-black">
+    <div class="text-xl mr-auto pr-3 leading-none">
+      {{ title }}
+    </div>
+    <svg class="{{ svg_mobileclass }}"
+        width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 5.00002L6.00002 10M11 5.00001L6.00002 10M6.00002 10L6 0.500019" stroke="black"/>
+    </svg>
+  </div>
+</a>
+{{ /if }}
+
+<a class="{{link_class}}"
+  href="{{ link_url }}"
+  target="{{ target }}"
+>
+    {{ if show_on_hover }}
+        <span class="relative leading-[26px] tracking-wide inline-block">
+            {{ title }}
+
+            {{  partial:icons/arrow_small
+                svg_width="11"
+                svg_height="12"
+                :svg_class="svg_class"
+                :path_class="stroke_class"
+            }}
+        </span>
+    {{ else }}
+        <span class="{{ title_class }}">{{ title }}</span>
+
+        {{ arrow_class = "transition-all "+ svg_class  }}
+
+        {{  partial:icons/arrow_circle
+            :svg_class="arrow_class"
+            :circle_class="path_class"
+            :path_class="stroke_class"
+        }}
+    {{ /if }}
+</a>
+<!-- End: /components/_link_with_arrow.antlers.html -->

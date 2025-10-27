@@ -5,13 +5,14 @@
 
 <!-- /components/_collapse.antlers.html -->
 
-{{# collapse_menu | dump #}}
+{{# accordion | dump #}}
 
 {{ collapse_int = 0  }}
 <div x-data="initAccordion()"
-    class="accordion relative z-10"
+     x-init="init()"
+    class="accordion relative z-10 border-t border-black"
 >
-{{ collapse_menu }}
+{{ accordion }}
 
 
     {{ html_colour =  'white' }}
@@ -24,17 +25,21 @@
         {{ html_hover_colour =  collapse_hover_colour }}
     {{ /if }}
 
+
+    {{# stroke-black stroke-darkgrey stroke-white stroke-lightblue stroke-blue stroke-darkblue stroke-pink stroke-yellow stroke-orange stroke-green stroke-grey fill-black fill-white fill-lightblue fill-blue fill-darkblue fill-pink fill-yellow fill-orange fill-green fill-grey group-hover:stroke-white group-hover:stroke-darkblue group-hover:bg-white group-hover:text-white group-hover:fill-white #}}
+
     {{stroke_class = 'stroke-' + html_colour }}
-    {{html_class   = class + ' flex cursor-pointer group mb-2 md:mb-0 text-' + html_colour }}
-    {{svg_class    = 'inline -rotate-45 transition-all rounded-full'}}
+    {{html_class   = class + ' flex items-end md:items-center cursor-pointer group text-' + html_colour }}
+    {{svg_class    = 'inline transition-all rounded-full'}}
     {{path_class   = 'fill-' + html_colour }}
 
     {{ if html_hover_colour }}
-        {{svg_class    .= ' group-hover:bg-'+html_colour }}
-        {{stroke_class .= ' group-hover:stroke-'+html_hover_colour }}
+        {{ svg_class    .= ' group-hover:bg-'+html_colour }}
+        {{ stroke_class .= ' group-hover:stroke-'+html_hover_colour }}
+        {{ html_class  .= ' transition-all duration-300 hover:text-'+html_hover_colour }}
     {{ /if }}
 
-    {{svg_size = 20 }}
+    {{svg_width = 20 }}
 
     {{ if collapse_text_size }}
 
@@ -43,93 +48,135 @@
         {{ if collapse_text_size == 'h1'
             || collapse_text_size == 'h2'
         }}
-            {{svg_size = 60 }}
+            {{ html_class .= ' 2xl:text-6xxl ' }}
+            {{ svg_class .= ' 2xl:w-[57px] w-[40px]' }}
+            {{svg_width = 57 }}
         {{ /if }}
 
         {{ if collapse_text_size == 'h3' }}
-            {{svg_size = 40 }}
+            {{svg_width = 40 }}
         {{ /if }}
 
         {{ if collapse_text_size == 'h4' }}
-            {{svg_size = 25 }}
+            {{svg_width = 25 }}
         {{ /if }}
 
         {{ if collapse_text_size == 'h5' }}
-            {{svg_size = 15 }}
+            {{svg_width = 15 }}
         {{ /if }}
 
     {{ /if }}
 
-    <div>
+    <div id="{{ collapse_slug }}"
+        data-index="{{ collapse_int }}"
+        class="pt-[9px] pb-3 md:pt-[15px] md:pb-7 border-b border-black"
+    >
         <div class="{{html_class}}"
             @click="toggleCollapsed({{ collapse_int}})"
         >
+            <div class="mobile-only:text-xl mr-auto pr-3 leading-none">{{ collapse_title }}</div>
 
-            <div class="mr-auto pr-3">{{ collapse_title }}</div>
-
-            <svg xmlns="http://www.w3.org/2000/svg"
-                width="{{ svg_size }}"
-                height="{{ svg_size }}"
-                viewBox="0 0 62.01 62.01"
-                class="transition-all
-                    float-right
-                    mobile-only:w-[36px] mobile-only:h-[36px]
-                    {{ svg_class }}
-                "
-                x-bind:class="{'rotate-[135deg]' : !expanded[{{ collapse_int}}]  }"
-            >
-                <polyline class="fill-none stroke-[2.2px] transition-all {{stroke_class}}"
-                    points="20.66 21.67 40.25 21.67 40.25 41.26"
-                />
-                <line class="fill-none stroke-[2.2px] transition-all {{stroke_class}}"
-                    x1="20.66"
-                    y1="41.25"
-                    x2="40.24"
-                    y2="21.67"
-                />
-                <path class="transition-all {{path_class}}"
-                    d="M31,2.2A28.8,28.8,0,1,1,2.2,31,28.83,28.83,0,0,1,31,2.2M31,0A31,31,0,1,0,62,31,31,31,0,0,0,31,0Z"
-                />
-            </svg>
+            <div x-bind:class="{'rotate-180' : expanded[{{ collapse_int}}]  }">
+            {{ partial:icons/arrow
+              :svg_width="svg_width"
+              :svg_class="arrow_class"
+              :stroke_class="stroke_class"
+            }}
+            {{# partial:icons/arrow_circle
+              :svg_width="svg_width"
+              :svg_class="arrow_class"
+              :circle_class="stroke_class"
+              :path_class="stroke_class"
+            #}}
+          </div>
         </div>
+
         <div
             x-show="expanded[{{ collapse_int}}]"
             x-collapse
-            class="grid gap-4 md:grid-cols-12"
+            class="grid gap-3 md:gap-4 md:grid-cols-12
+            h4 mobile-only:mt-3
+            items-start
+            tracking-tighter"
             x-bind:class="{'opened' : expanded[{{ collapse_int}}] && showOverflow }"
         >
-            <div class="md:col-span-6 pt-12 pb-12">{{ collapse_left_column }}</div>
-            <div class="md:col-span-6 pt-12 pb-12">{{ collapse_right_column }}</div>
+            <div class="md:col-span-6 lg:col-span-5
+                pt-0 md:pt-[100px]
+                md:pb-2"
+            >
+                {{ collapse_left_column }}
+                    {{ partial src="components/{type}" }}
+                {{ /collapse_left_column }}
+            </div>
+            <div class="md:col-start-7 md:col-span-5
+                md:pt-[100px]
+                pb-2
+                mt-0
+                transform transition-all duration-300"
+            >
+                {{ collapse_right_column }}
+                    {{ partial src="components/{type}" }}
+                {{ /collapse_right_column }}
+            </div>
         </div>
     </div>
     {{ collapse_int = collapse_int + 1  }}
-
-{{ /collapse_menu }}
+{{ /accordion }}
 </div>
 <script>
+    //Force scroll to the top of the page always by default
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 100);
 
     function initAccordion() {
-
         return {
             expanded: [],
             showOverflow: false, //This is needed to show the UL dots when the accordion is open
+            init() {
+                // Wait for full DOM load
+                if (document.readyState === 'complete') {
+                    this.handleHash();
+                } else {
+                    window.addEventListener('DOMContentLoaded', () => this.handleHash());
+                }
+            },
+            handleHash() {
+                const hash = window.location.hash;
+                if (!hash) return;
 
+
+
+
+                history.replaceState(null, null, window.location.pathname);
+                const element = document.querySelector(hash);
+
+                if (element) {
+                    const index = element.dataset.index;
+                    this.expanded[index] = true;
+                    this.showOverflow = true;
+
+                    setTimeout(() => {
+                        const target = document.querySelector(hash);
+                        if (target) {
+                            target.scrollIntoView({ behavior: "smooth" });
+                            history.pushState(null, null, hash);
+                        }
+                    }, 2000);
+                }
+            },
             toggleCollapsed( expanded_int ) {
                 let prev = this.expanded[expanded_int];
                 this.collapseAccordion();
                 this.expanded[expanded_int] = !prev;
 
                 setTimeout(() => this.showOverflow = true, 100)
-
             },
             collapseAccordion() {
                 this.expanded.fill(false);
                 this.showOverflow = false;
             },
-
         }
-
     }
-
   </script>
 <!-- End: /components/_collapse.antlers.html -->

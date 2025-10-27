@@ -62,6 +62,25 @@ fields:
               fields:
                 -
                   import: carousel
+            collapse:
+              display: Collapse
+              icon: form-drop-down-menu
+              fields:
+                -
+                  handle: accordion
+                  field:
+                    type: replicator
+                    display: Accordion
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          collapsible_element:
+                            display: 'Collapsible element'
+                            icon: layout-flip-down
+                            fields:
+                              -
+                                import: collapse
         text:
           display: Text
           instructions: 'Text based sets.'
