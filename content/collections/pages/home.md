@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: b2942213-49d1-4a14-b79d-5a06f75a8862
-updated_at: 1761233532
+updated_at: 1761242000
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -109,6 +109,7 @@ page_builder:
         horizontal_position: 5
         mobile_horizontal_position: 0
         tablet_horizontal_position: 0
+        column_article_slug: welcome
         span_rows: 0
     background_colour_type: custom
     background_colour: white

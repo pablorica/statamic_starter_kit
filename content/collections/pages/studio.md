@@ -1,7 +1,7 @@
 ---
 id: 392a2aa1-4aad-460a-a268-0db76f43e59a
 blueprint: page
-title: 'Long form content'
+title: Studio
 page_builder:
   -
     id: mh3h5w9e
@@ -281,6 +281,156 @@ page_builder:
                 entry: home
                 button_type: button
     type: article
+    enabled: false
+    article_slug: long-form
+  -
+    id: mh4zbjpw
+    slug: intro
+    columns:
+      -
+        id: mh4zc6by
+        column_article:
+          -
+            type: paragraph
+            attrs:
+              textAlign: left
+            content:
+              -
+                type: text
+                text: 'People are at the heart of what we do. We’re so proud of our team who have won numerous awards for very ambitious clients.'
+        size: 4
+        set_horizontal_position: true
+        horizontal_position: 2
+        set_span_rows: false
+        vertical_alignment: top
+        top_padding: -1
+        right_padding: -1
+        bottom_padding: -1
+        left_padding: -1
+        size_mobile: 6
+        mobile_top_padding: -1
+        mobile_right_padding: -1
+        mobile_bottom_padding: -1
+        mobile_left_padding: -1
+        mobile_horizontal_position: 0
+        tablet_size: 12
+        tablet_horizontal_position: 0
+        type: new_column
+        enabled: true
+        span_rows: 0
+      -
+        id: mh4zedjh
+        column_article:
+          -
+            type: set
+            attrs:
+              id: mh4zgot9
+              values:
+                type: image
+                image: a.png
+                size: md
+        size: 6
+        set_horizontal_position: false
+        set_span_rows: false
+        vertical_alignment: bottom
+        top_padding: -1
+        right_padding: -1
+        bottom_padding: -1
+        left_padding: -1
+        size_mobile: 6
+        mobile_top_padding: -1
+        mobile_right_padding: -1
+        mobile_bottom_padding: -1
+        mobile_left_padding: -1
+        tablet_size: 12
+        type: new_column
+        enabled: true
+        horizontal_position: 0
+        span_rows: 0
+        mobile_horizontal_position: 0
+        tablet_horizontal_position: 0
+      -
+        id: mh4zhtdm
+        column_article:
+          -
+            type: set
+            attrs:
+              id: mh4zi3oj
+              values:
+                type: video
+                video_type: embed
+                video_url: 'https://www.vimeo.com/140088872'
+                ratio_width: 16
+                ratio_height: 9
+                video_autoplay: true
+                video_loop: true
+                show_mute_button: false
+        size: 4
+        set_horizontal_position: false
+        set_span_rows: false
+        vertical_alignment: top
+        top_padding: -1
+        right_padding: -1
+        bottom_padding: -1
+        left_padding: -1
+        size_mobile: 6
+        mobile_top_padding: -1
+        mobile_right_padding: -1
+        mobile_bottom_padding: -1
+        mobile_left_padding: -1
+        tablet_size: 12
+        type: new_column
+        enabled: true
+        horizontal_position: 0
+        span_rows: 0
+        mobile_horizontal_position: 0
+        tablet_horizontal_position: 0
+      -
+        id: mh4zjuzu
+        column_article:
+          -
+            type: set
+            attrs:
+              id: mh4zk333
+              values:
+                type: image
+                image: image05.jpg
+                size: md
+        size: 6
+        set_horizontal_position: false
+        set_span_rows: false
+        vertical_alignment: top
+        top_padding: -1
+        right_padding: -1
+        bottom_padding: -1
+        left_padding: -1
+        size_mobile: 6
+        mobile_top_padding: -1
+        mobile_right_padding: -1
+        mobile_bottom_padding: -1
+        mobile_left_padding: -1
+        tablet_size: 12
+        type: new_column
+        enabled: true
+        horizontal_position: 0
+        span_rows: 0
+        mobile_horizontal_position: 0
+        tablet_horizontal_position: 0
+    background_colour_type: custom
+    text_colour_type: custom
+    text_colour: black
+    section_over_floating_logo: false
+    loading_effect: true
+    top_border: false
+    remove_columns_gap: false
+    screen_minimum_height: false
+    display_scrolldown_button: false
+    section_collapsable: false
+    top_padding: -1
+    right_padding: -1
+    bottom_padding: -1
+    left_padding: -1
+    type: section
     enabled: true
 seo_noindex: false
 seo_nofollow: false
@@ -288,5 +438,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: b2942213-49d1-4a14-b79d-5a06f75a8862
-updated_at: 1761227495
+updated_at: 1761567757
+bg_colour: 'rgb(166, 164, 91)'
 ---
