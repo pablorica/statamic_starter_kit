@@ -3,32 +3,22 @@ fields:
   -
     handle: slug
     field:
-      input_type: text
-      antlers: false
       type: text
       display: Slug
       instructions: 'Use this field to apply a unique ID to this section to be used with jump links'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
       width: 33
   -
     handle: columns
     field:
       collapse: true
-      previews: true
-      fullscreen: true
+      type: replicator
+      display: Columns
       sets:
         new_set_group:
           display: 'New Section'
-          instructions: null
-          icon: null
           sets:
             new_column:
               display: 'New Column'
-              instructions: null
-              icon: null
               fields:
                 -
                   import: article
@@ -246,69 +236,36 @@ fields:
                       set_horizontal_position: 'equals true'
                     default: 0
                     replicator_preview: true
-      type: replicator
-      display: Columns
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
-      replicator_preview: true
   -
     handle: navigation
     field:
       type: tab
       display: Navigation
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: navigation_colour
     field:
       options:
         white: null
         grey: null
-      taggable: false
-      push_tags: false
-      multiple: false
-      clearable: false
-      searchable: true
-      cast_booleans: false
       type: select
       display: 'Navigation colour'
       instructions: 'The colour of the navigation buttons will change according to the background of the section when they are over it. However, you can force this colour by selecting it here.'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: link
     field:
       type: tab
       display: Link
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: section_link
     field:
       type: link
       display: 'Section link'
       instructions: 'If this section is linked to an internal or external element, select the URL here.'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: background
     field:
       type: tab
       display: Background
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: bg_image
     field: common.image
@@ -328,11 +285,6 @@ fields:
       type: video
       display: 'Background Video'
       instructions: 'YouTube or Vimeo URL.'
-      width: 100
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: background_colour_type
     field:
@@ -344,28 +296,12 @@ fields:
       type: button_group
       display: 'Background Colour'
       width: 50
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: background_colour
     field: common.colour
     config:
-      swatches:
-        - white
-        - yellow
-        - pink
-        - orange
-        - green
-        - lightblue
-        - blue
-        - darkblue
-        - grey
-        - black
       display: 'Background Custom Colour'
       width: 50
-      default: white
       if:
         background_colour_type: 'equals custom'
   -
@@ -379,10 +315,6 @@ fields:
       type: button_group
       display: 'Text Colour'
       width: 50
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: text_colour
     field: common.colour
@@ -397,29 +329,17 @@ fields:
     field:
       type: tab
       display: Structure
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: section_over_floating_logo
     field:
-      default: false
       type: toggle
       display: 'Show section over floating logo'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
       width: 33
   -
     handle: section_custom_classes
     field:
       type: text
       display: 'Custom classes'
-      instructions_position: above
-      visibility: visible
-      hide_display: false
       width: 66
   -
     handle: loading_effect
@@ -428,67 +348,36 @@ fields:
       type: toggle
       display: 'Loading effect'
       width: 33
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: top_border
     field:
-      default: false
       type: toggle
       display: 'Top Border'
       width: 33
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: remove_columns_gap
     field:
-      default: false
       type: toggle
       display: 'Remove columns gap'
       width: 33
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: screen_minimum_height
     field:
-      default: false
       type: toggle
       display: 'Screen minimum height'
       width: 33
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: display_scrolldown_button
     field:
-      default: false
       type: toggle
       display: 'Display the scroll-down button'
       width: 33
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: scroll_down_button_link
     field:
-      input_type: text
-      antlers: false
       type: text
       display: 'Button Link / Anchor'
       width: 33
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
       if:
         display_scrolldown_button: 'equals true'
   -
@@ -496,21 +385,12 @@ fields:
     field:
       type: tab
       display: Collapse
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: section_collapsable
     field:
-      default: false
       type: toggle
       display: 'Collapsable Section'
       width: 33
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: section_collapsable_title
     field: collapse.collapse_title
@@ -530,14 +410,9 @@ fields:
   -
     handle: collapse_remove_hover_effect
     field:
-      default: false
       type: toggle
       display: 'No reverse colours on hover'
       width: 33
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
       if:
         section_collapsable: 'equals true'
   -
@@ -553,10 +428,6 @@ fields:
     field:
       type: tab
       display: Padding
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: top_padding
     field: common.top_padding
@@ -574,10 +445,6 @@ fields:
     field:
       type: tab
       display: Viewports
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false
   -
     handle: hide_viewports
     field:
@@ -585,15 +452,7 @@ fields:
         mobile: null
         tablet: null
         desktop: null
-      taggable: false
-      push_tags: false
       multiple: true
       clearable: true
-      searchable: true
-      cast_booleans: false
       type: select
       display: 'Hide Viewports'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      hide_display: false

@@ -160,16 +160,15 @@ fields:
     handle: colour
     field:
       swatches:
-        - white
-        - yellow
-        - pink
-        - orange
-        - green
-        - lightblue
-        - blue
-        - darkblue
-        - grey
-        - black
+        - "rgb(255, 255, 255)"
+        - "rgb(250, 224, 37)"
+        - "rgb(233, 186, 152)"
+        - "rgb(135, 197, 232)"
+        - "rgb(166, 164, 91)"
+        - "rgb(255, 102, 67)"
+        - "rgb(177, 111, 69)"
+        - "rgb(11, 184, 137)"
+        - "rgb(0, 0, 0)"
       allow_any: false
       type: color
       display: Colour

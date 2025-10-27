@@ -44,15 +44,14 @@ return [
 
 
     'default_colors' => [
-        'black'     => '#000',
-        'blue'      => '#0071CE',
-        'darkblue'  => '#000F9F',
-        'green'     => '#00AC69',
-        'grey'      => '#D9D8D6',
-        'lightblue' => '#65B2E8',
-        'orange'    => '#FF6B00',
-        'pink'      => '#E96BB0',
-        'yellow'    => '#FFCD00',
-        'white'     => '#fff',
+      'white'           => '#FFFFFF',
+      'factoryyellow'   => '#FAE025',
+      'skin'            => '#E9BA98',
+      'ski'             => '#87C5E8',
+      'khaki'           => '#A6A45B',
+      'blush'           => '#FF6643',
+      'leather'         => '#B16F45',
+      'marrsgreen'      => '#0BB889',
+      'black'           => '#000000',
     ],
 ];

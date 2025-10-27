@@ -6,22 +6,17 @@
 
 @theme {
     /* Colors */
+    --color-white:            #FFFFFF;   /*  "rgb(255, 255, 255)" */
+    --color-factoryyellow:    #FAE025; /* "rgb(250, 224, 37)" */
+    --color-skin:             #E9BA98; /* "rgb(233, 186, 152)" */
+    --color-ski:              #87C5E8; /* "rgb(135, 197, 232)" */
+    --color-khaki:            #A6A45B; /* "rgb(166, 164, 91)" */
+    --color-blush:            #FF6643; /* "rgb(255, 102, 67)" */
+    --color-leather:          #B16F45; /* "rgb(177, 111, 69)" */
+    --color-marrsgreen:       #0BB889; /* "rgb(11, 184, 137)" */
+    --color-black:            #000000;  /*  "rgb(0, 0, 0)" */
 
-    --color-black:     #000;
-    --color-blue:      #00B2E3;
-    --color-darkblue:  #005CB9;
-    --color-green:     #00945E;
-    --color-grey:      #C8C8C8;
-    --color-darkgrey:  #898A8D;
-    --color-orange:    #FF5F39;
-    --color-red:       #D51C59;
-    --color-yellow:    #FFCD00;
-    --color-white:     #fff;
-    --color-sand:      #E8E1D6;
-    --color-beige:     #D9C2B6;
-    --color-lightbeige:#D9C2B680;
-
-    /* If Bard Text Color add-on is installed, do not forget to update config/bard-custom-colors.php */
+    /* If Bard Text Color add-on is installed, do not forget to update config/bard-custom-colors.php and the color blocks in statamic/resources/fieldsets/common.yaml, statamic/resources/views/default.antlers.html, statamic/resources/views/page_builder/_section.antlers.html and statamic/resources/views/projects/show.antlers.html  */
 
     --color-primary: oklch(53.24% 0.301 290.86);
 

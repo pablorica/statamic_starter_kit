@@ -4,7 +4,23 @@
 #}}
 
 <!-- /default.antlers.html -->
-<main class="py-12 md:py-16 lg:py-24 stack-12 md:stack-16 lg:stack-24" id="content">
+{{ if bg_colour }}
+  {{ style = 'background-color:' + bg_colour ;}}
+{{ /if }}
+{{#
+  bg-black bg-white bg-factoryyellow bg-skin bg-ski bg-khaki bg-blush bg-leather  bg-marrsgreen
+
+  text-black text-white text-factoryyellow text-skin text-ski text-khaki text-blush text-leather text-marrsgreen
+
+  group-hover:bg-black group-hover:bg-white group-hover:bg-factoryyellow group-hover:bg-skin group-hover:bg-ski group-hover:bg-khaki group-hover:bg-blush group-hover:bg-leather group-hover:bg-marrsgreen
+
+  group-hover:text-black group-hover:text-white group-hover:text-factoryyellow group-hover:text-skin group-hover:text-ski group-hover:text-khaki group-hover:text-blush group-hover:text-leather group-hover:text-marrsgreen
+#}}
+<main id="content"
+  class="py-12 md:py-16 lg:py-24
+    stack-12 md:stack-16 lg:stack-24"
+  style="{{ style }}"
+>
     {{ page_builder scope="block" }}
         {{ partial src="page_builder/{type}" }}
     {{ /page_builder }}

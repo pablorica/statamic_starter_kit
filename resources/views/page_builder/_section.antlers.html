@@ -107,7 +107,7 @@
 {{ endif }}
 
 
-{{# text-black text-white text-lightblue text-blue text-darkblue text-pink text-yellow text-orange text-green text-grey #}}
+{{# text-black text-white  #}}
 
 {{ text_colour_set =  null }}
 {{ if text_colour }}
@@ -125,7 +125,7 @@
 {{ /if }}
 
 
-{{# bg-black bg-white bg-lightblue bg-blue bg-darkblue bg-pink bg-yellow bg-orange bg-green bg-grey #}}
+{{# bg-black bg-white  #}}
 {{ background_colour_set =  null }}
 {{ if background_colour }}
     {{ background_colour_set =  background_colour }}
@@ -186,7 +186,7 @@
         x-init="hasCarousel = $el.querySelector('.carousel') !== null;
                 hasAccordion = $el.querySelector('.accordion') !== null;"
         x-intersect.once="shown_{{ xid }} = true;"
-        :style="`{{ section_style }} ${bg ? `background-color: var(--color-${bg})` : ''}`"
+        :style="`{{ section_style }} ${bg} ? `background-color: var(--color-${bg})` : ''}`"
         class="{{section_class}} transition-all duration-[300ms]"
         :class="shown_{{ xid }} && load_section && !hasCarousel && !hasAccordion ? ' reveal-section ' : '';"
 >
@@ -199,11 +199,15 @@
         {{ /if }}
 
         {{#
-            stroke-black stroke-white stroke-lightblue stroke-blue stroke-darkblue stroke-pink stroke-yellow stroke-orange stroke-green stroke-grey
-            fill-black fill-white fill-lightblue fill-blue fill-darkblue fill-pink fill-yellow fill-orange fill-green fill-grey
-            group-hover:stroke-black group-hover:stroke-white group-hover:stroke-lightblue group-hover:stroke-blue group-hover:stroke-darkblue group-hover:stroke-pink group-hover:stroke-yellow group-hover:stroke-orange group-hover:stroke-green group-hover:stroke-grey
-            group-hover:fill-black group-hover:fill-white group-hover:fill-lightblue group-hover:fill-blue group-hover:fill-darkblue group-hover:fill-pink group-hover:fill-yellow group-hover:fill-orange group-hover:fill-green group-hover:fill-grey
-         #}}
+          stroke-black stroke-white stroke-factoryyellow stroke-skin stroke-ski stroke-khaki stroke-blush stroke-leather stroke-marrsgreen
+
+          fill-black fill-white fill-factoryyellow fill-skin fill-ski fill-khaki fill-blush fill-leather fill-marrsgreen
+
+          group-hover:stroke-black group-hover:stroke-white group-hover:stroke-factoryyellow group-hover:stroke-skin group-hover:stroke-ski group-hover:stroke-khaki group-hover:stroke-blush group-hover:stroke-leather group-hover:stroke-marrsgreen
+
+          group-hover:fill-black group-hover:fill-white group-hover:fill-factoryyellow group-hover:fill-skin group-hover:fill-ski group-hover:fill-khaki group-hover:fill-blush group-hover:fill-leather group-hover:fill-marrsgreen
+
+        #}}
         {{stroke_class = 'stroke-' + html_colour }}
         {{html_class   = class + ' cursor-pointer group text-' + html_colour }}
         {{svg_class    = 'inline -rotate-45 transition-all rounded-full -mt-[5px]'}}
